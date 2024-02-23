@@ -1,0 +1,20 @@
+//Variables 
+$primaryColor :  #ececec;
+$secondaryColor : rgb(35, 35, 35);
+$typicalColor : rgb(128, 98, 0);
+
+//Fonts
+$arialFont: 'arial', sans-serif;
+$acmeFont: 'Acme', sans-serif;
+$aliceFont: 'Alice', serif;
+$domineFont: 'Domine', serif;
+$oswaldFont: 'Oswald', sans-serif;
+$passionOneFont : 'Passion One', sans-serif;
+$digital7Font : 'digital-7', sans-serif;
+$alexBrushFont : 'Alex Brush', sans-serif;
+
+
+@font-face {
+    font-family: 'digital-7';
+    src: url('../font/digital-7.ttf') format('truetype');
+}

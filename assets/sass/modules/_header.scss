@@ -1,0 +1,228 @@
+@use 'submodules/variable' as var;
+@use 'submodules/mixin' as mix;
+@use 'mobile';
+
+.header-content {
+    width: 100vw;
+    height: 100vh;
+    .header-navbar {
+        @include mix.flexBox($justify:center);
+        position: absolute;
+        margin-top: 50px;
+        max-height: 100px;
+        width: 100%;
+        z-index: 99;
+        overflow: hidden;
+        .header-menu {
+            @include mix.flexBox($align: center, $justify:space-between);
+            margin: auto;
+            height: 100%;
+            .logo-wrap {
+                height: 100px;
+                width: auto;
+                margin-left: 50px;
+                .logo-name {
+                    height: 100%;
+                    h1 {
+                        @include mix.flexBox($align: center);
+                        height: 100%;
+                        a {
+                            text-decoration: none;
+                            font-size: 60px;
+                            white-space: nowrap;
+                            font-family: var.$alexBrushFont;
+                            color: var.$secondaryColor;
+                        }
+                    }
+                }
+            }
+
+            .navbar {
+                @include mix.flexBox($align: center, $justify: flex-end);
+                width: 80%;
+                height: 100%;
+                .menu-bar {
+                    @include mix.flexBox($align: center, $justify: center);
+                    height: 100%;
+                    ul {
+                        @include mix.flexBox($align: center, $justify: center);
+                        li.list-item {
+                            display: flex;
+                            align-items: flex-end;
+                            height: 35px;
+                            margin: 0 50px;
+                            &:first-child {
+                                margin-left: 0;
+                            }
+    
+                            a {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-direction: column;
+                                height: 50%;
+                                color: var.$secondaryColor;
+                                text-align: center;
+                                text-decoration: none;
+                                font-size: 20px;
+                                font-family: var.$oswaldFont;
+                                transition: all 0.5s;
+                                &:hover {
+                                    color: var.$typicalColor;
+                                }
+
+                                &::after {
+                                    margin-top: 15px;
+                                    content: "";
+                                    display: block;
+                                    width: 0;
+                                    height: 3px;
+                                    text-decoration: none;
+                                    font-family: var.$oswaldFont;
+                                    transition: all 0.5s;
+                                }
+    
+                                &:hover::after {
+                                    width: 100%;
+                                    background-color: var.$typicalColor;
+                                }
+                            }
+    
+                        }
+                    }
+                }
+                .dark-mode {
+                    @include mix.flexBox($align: center);
+                    height: 100%;
+                    margin-left: 50px;
+                    margin-right: 50px;
+                    .dark-mode-wrap {
+                        height: 35px;
+                        .btn-mode {
+                            height: 100%;
+                            button {
+                                cursor: pointer;
+                                width: 35px;
+                                height: 100%;
+                                margin: auto;
+                                border: none;
+                                padding-inline: 0;
+                                padding-block: 0;
+                                border-radius: 50px;
+                                box-shadow: 0 0 10px  var.$secondaryColor;
+                                background-color: transparent;
+                                transition: all 0.5s;
+                                backdrop-filter: blur(1px);
+                                i {
+                                    display: block;
+                                    color: var.$secondaryColor;
+                                    font-size: 15px;
+                                }
+                                &:hover {
+                                    box-shadow: 0 0 30px var.$primaryColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        figure {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            .video-bg {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                min-height: 100vh;
+                min-width: 100vw;
+                z-index: -1;
+            }
+        }
+    }
+
+    .header-hero {
+        .hero-primary-item {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            .hero-title-center {
+                position: relative;
+                height: 100%;
+                margin: 0 auto;
+                .title-contact {
+                    position: absolute;
+                    top: 35%;
+                    left: 50px;
+                    right: 50px;
+                    .hero-title {
+                        height: auto;
+                        .name-title {
+                            margin: 55px 0;
+                            font-size: 80px;
+                            font-family: var.$aliceFont;
+                            color: var.$secondaryColor;
+                        }
+                    }
+        
+                    .box-contact {
+                        @include mix.flexBox($align: center);
+                        width: 200px;
+                        height: auto;
+                        a.contact {
+                            display: flex;
+                            width: 100%;
+                            height: 80px;
+                            text-decoration: none;
+                            box-shadow: 0 0 20px var.$secondaryColor;
+                            backdrop-filter: blur(20px);
+                            border-radius: 10px;
+                            transition: all 0.5s;
+                            span {
+                                display: block;
+                                margin: auto;
+                                color: var.$secondaryColor;
+                                font-size: 25px;
+                                font-family: var.$acmeFont;
+                            }
+    
+                            &:hover {
+                                box-shadow: 0 0 30px var.$primaryColor;
+                            }
+                        }
+                    }
+
+                    .screen-content {
+                        direction: rtl;
+                        margin-top: 30px;
+                        height: 250px;
+                        width: 100% ;
+                        .box-update {
+                            width: 600px;
+                            height: 100%;
+                            backdrop-filter: blur(5px);
+                            border: 4px solid var.$secondaryColor;
+                            // .box-update {
+                            //     position: absolute;
+                            //     top: 55%;
+                            //     width: 100%;
+                            //     height: 400px;
+                            //     background-color: cadetblue;
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}   

@@ -1,0 +1,8 @@
+@use 'variable' as var;
+
+@mixin flexBox($align : stretch, $justify: flex-start, $dir: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $dir;
+}
