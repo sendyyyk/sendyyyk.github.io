@@ -8,15 +8,18 @@
     .header-navbar {
         @include mix.flexBox($justify:center);
         position: absolute;
-        margin-top: 50px;
-        max-height: 100px;
         width: 100%;
-        z-index: 99;
-        overflow: hidden;
+        // overflow-x: hidden;
         .header-menu {
             @include mix.flexBox($align: center, $justify:space-between);
-            margin: auto;
-            height: 100%;
+            position: sticky;
+            top: 0;
+            margin: 50px auto;
+            height: 100px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
+            z-index: 111;
+            transition: all 0.5s linear;
             .logo-wrap {
                 height: 100px;
                 width: auto;
@@ -72,8 +75,8 @@
                                 }
 
                                 &::after {
-                                    margin-top: 15px;
                                     content: "";
+                                    margin-top: 15px;
                                     display: block;
                                     width: 0;
                                     height: 3px;
@@ -150,6 +153,8 @@
     }
 
     .header-hero {
+        width: 100%;
+        height: 100%;
         .hero-primary-item {
             position: absolute;
             top: 0;
@@ -161,7 +166,8 @@
                 margin: 0 auto;
                 .title-contact {
                     position: absolute;
-                    top: 35%;
+                    top: 50%;
+                    transform: translateY(-50%);
                     left: 50px;
                     right: 50px;
                     .hero-title {
@@ -204,20 +210,61 @@
                     .screen-content {
                         direction: rtl;
                         margin-top: 30px;
-                        height: 250px;
+                        height: 400px;
                         width: 100% ;
                         .box-update {
-                            width: 600px;
+                            width: 500px;
                             height: 100%;
                             backdrop-filter: blur(5px);
-                            border: 4px solid var.$secondaryColor;
-                            // .box-update {
-                            //     position: absolute;
-                            //     top: 55%;
-                            //     width: 100%;
-                            //     height: 400px;
-                            //     background-color: cadetblue;
-                            // }
+                            box-shadow: -5px 5px 5px black;
+                            .update-picture {
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                background-image: url(../img-vid/hero.png);
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: cover;
+                                .label-update {
+                                    display: flex;
+                                    position: absolute;
+                                    top: 25px;
+                                    right: -40px;
+                                    height: 10%;
+                                    padding: 0 10px;
+                                    transform: rotate(45deg);
+                                    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5);
+                                    background-color: var.$typicalColor;
+                                    .label-center {
+                                        direction: ltr;
+                                        margin: auto;
+                                        span {
+                                            display: block;
+                                            font-size: 2rem;
+                                            text-transform: uppercase;
+                                            color: var.$primaryColor;
+                                            font-family: var.$domineFont;
+                                        }
+                                    }
+                                }
+                                .update-time {
+                                    @include mix.flexBox($align: center);
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    width: auto;
+                                    height: 10%;
+                                    padding: 0 5px;
+                                    background-color: var.$secondaryColor;
+                                    border-top: 1px solid black;
+                                    border-right: 1px solid black;
+                                    .date {
+                                        font-size: 1.5rem;
+                                        color: var.$primaryColor;
+                                        font-family: var.$digital7Font;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

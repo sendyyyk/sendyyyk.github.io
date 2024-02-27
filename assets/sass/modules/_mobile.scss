@@ -4,42 +4,210 @@
 .header-content {
     .header-navbar {
         .header-menu {
-            .navbar-MP {
+            .hamburger-menu {
                 width: 50px;
-                height: 50px;
-                button.hamburger-menu {
+                height: 40px;
+                button.hamburger-btn {
                     cursor: pointer;
-                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     width: 100%;
                     height: 100%;
                     border: none;
                     padding-inline: 0;
+                    padding-block-end: 0;
+                    padding-block-start: 0;
                     background-color: transparent;
+                    font-size: 0;
                     .line {
-                        display: flex;
-                        flex-direction: column;
-                        height: 7%;
+                        display: block;
+                        height: 5px;
                         width: 100%;
+                        border-radius: 50px;
                         background-color: var.$secondaryColor;
                     }
+                }
 
-                    .line::before {
-                        content: "";
+                &:active {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .navbarMP {
+        transform: translateX(100vw);
+        transition: all 1s;
+        .logo-wrap {
+            @include mix.flexBox($align: center, $justify: space-between);
+            height: 100px;
+            width: 100%;
+            background-color: lightblue;
+            box-shadow: 0 1.2vmax 1vmax rgba(0, 0, 0,0.5);
+            border: 1px solid rgb(105, 193, 223);
+            padding: 0 3vmax;
+            z-index: 1;
+            .logo-name {
+                width: auto;  
+                height: 100%;
+                h1 {
+                    @include mix.flexBox($align: center);
+                    height: 100%;
+                    a {
+                        text-decoration: none;
+                        font-size: 5.3vmax;
+                        white-space: nowrap;
+                        font-family: var.$alexBrushFont;
+                        color: var.$secondaryColor;
+                    }
+                }
+            }
+            .hamburger-menu-close {
+                @include mix.flexBox($align: center);
+                width: auto;
+                height: auto;
+                button.hamburger-btn {
+                    position: relative;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border: none;
+                    width: 4.3vmax;
+                    height: 3.3vmax;
+                    padding-inline: 0;
+                    padding-block-end: 0;
+                    padding-block-start: 0;
+                    background-color: transparent;
+                    font-size: 0;
+                    .line:nth-child(1) {
                         position: absolute;
-                        top: 3px;
-                        height: 2px;
+                        transform: rotate(35deg);
+                    }
+                    .line:nth-child(2) {
+                        display: none;
+                    }
+                    .line:nth-child(3) {
+                        position: absolute;
+                        transform: rotate(-35deg);
+                    }
+                    .line {
+                        display: block;
+                        height: 0.5vmax;
                         width: 100%;
+                        border-radius: 0.5vmax;
                         background-color: var.$secondaryColor;
                     }
-
-                    .line::after {
-                        content: "";
-                        position: absolute;
-                        bottom: 3px;
-                        height: 2px;
-                        width: 100%;
-                        background-color: var.$secondaryColor;
+                    &:active {
+                        background-color: transparent;
                     }
+                }
+                
+            }
+        }
+        nav.navbar {
+            direction: rtl;
+            position: relative;
+            height: calc(100% - 100px);
+            width: 100%;
+            z-index: -1;
+            background-image: url(../img-vid/background-navbarMP.jpg);
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 33%;
+                background-color: transparent;
+                backdrop-filter: blur(5px);
+                box-shadow: -5px 0 5px rgba(0, 0, 0, 0.493);
+            }
+            .menu-bar {
+                position: absolute;
+                width: 33%;
+                height: auto;
+                ul {
+                    @include mix.flexBox($dir: column);
+                    li {
+                        width: 100%;
+                        height: auto;
+                        border-bottom:  0.015vmax solid var.$secondaryColor;
+                        a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 7vmax;
+                            text-decoration: none;
+                            span {
+                                color: var.$secondaryColor;
+                                font-size: 2vmax;
+                                font-family: var.$oswaldFont; 
+                            }
+                            &:active {
+                                background-color: lightblue;
+                            }
+                        }
+                    }
+                }
+            }
+            .dark-mode {
+                position: absolute;
+                bottom: 0;
+                width: 33%;
+                height: auto;
+                transform: translateX(100vw);
+                transition: all 1s;
+                z-index: -1;
+                .dark-mode-wrap {
+                    border-top: 0.2vmax solid var.$secondaryColor;
+                    height: 7vmax;
+                    .btn-mode {
+                        @include mix.flexBox($align: center, $justify: center);
+                        height: 100%;
+                        button {
+                            height: 100%;
+                            width: 100%;
+                            border: none;
+                            background-color: transparent;
+                            box-shadow: -1vmax 0 1vmax black;
+                            i {
+                                font-size: 2vmax;
+                                color: var.$secondaryColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menu-settings {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 7vmax;
+            width: 33%;
+            list-style: none;
+            button {
+                @include mix.flexBox($align: center, $justify: center);
+                height: 100%;
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                &:active {
+                    background-color: lightblue;
+                }
+                span {
+                    color: var.$secondaryColor;
+                    font-size: 2vmax;
+                    font-family: var.$oswaldFont; 
+                }
+                i {
+                    margin-right: 0.5vmax;
+                    color: var.$secondaryColor;
+                    font-size: 2vmax;
                 }
             }
         }
