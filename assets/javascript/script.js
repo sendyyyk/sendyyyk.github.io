@@ -42,20 +42,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Ukuran Gambar Sesuai Resolusi Layar Perangkat 
         if (window.innerWidth <= 1300 || window.innerHeight <= 800) {
-            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/HD-1280x720/background-hero-HD.mp4";
+            // document.querySelector(".video-bg source").remove();
+            const sourceElement = document.createElement("source");
+            sourceElement.src = "assets/img-vid/HD-1280x720/background-hero-HD.mp4";
+            sourceElement.type = "video/mp4";
+            document.querySelector(".video-bg").appendChild(sourceElement);
+            console.log("sukses 720");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/HD-1280x720/update-image-HD.png')";
+            // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/HD-1280x720/background-hero-HD.mp4";
             //HP
         } else if (window.innerWidth <= 2000 || window.innerHeight <= 1100) {
-            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
+            const sourceElement = document.createElement("source");
+            sourceElement.src = "assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
+            sourceElement.type = "video/mp4";
+            document.querySelector(".video-bg").appendChild(sourceElement);
+            console.log("sukses 1920");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Full-HD-1920x1080/update-image-FullHD.png')";
+            // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
             //FULL HD
         } else if (window.innerWidth <= 2600 || window.innerHeight <= 1500) {
-            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.mp4";
+            const sourceElement = document.createElement("source");
+            sourceElement.src = "assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.mp4";
+            sourceElement.type = "video/mp4";
+            document.querySelector(".video-bg").appendChild(sourceElement);
+            console.log("sukses 3K");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Quad-HD-2560x1440/update-image-QuadHD.png')";
+            // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.mp4";
             //QUAD HD
         } else if (window.innerWidth <= 4100 || window.innerHeight <= 2200) {
-            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
+            const sourceElement = document.createElement("source");
+            sourceElement.src = "assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
+            sourceElement.type = "video/mp4";
+            document.querySelector(".video-bg").appendChild(sourceElement);
+            console.log("sukses 4K");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/4K-UHD-3840x2160/update-image-4K-UHD.png')";
+            // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
             //4K UHD
         } else if (window.innerWidth <= 7700 || window.innerHeight <= 4400) {
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/8K-7620x4320/update-image-8K.png')";
