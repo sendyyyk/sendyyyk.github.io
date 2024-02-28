@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const headerMenu = document.querySelector(".header-menu");
     const headerNavbar = document.querySelector(".header-navbar");
-    // const headerNavbar = document.querySelector(".header-navbar");
-    // console.log(headerNavbar);
     const divElements = [
         document.createElement("div"), // hamburger-menu
         document.createElement("div"), // garis hamburger 1
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (window.innerWidth >= 1100) {
             if (headerMenu.contains(divElements[0])) {
                 divElements[0].remove();
-                console.log(divElements[4]);
             } else if (divElements[4]) {
                 divElements[4].style.transform = "translateX(100vw)";
                 divElements[4].style.display = "none";
@@ -47,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.innerWidth <= 1300 || window.innerHeight <= 800) {
             document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/HD-1280x720/background-hero-HD.mp4";
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/HD-1280x720/update-image-HD.png')";
+            //HP
         } else if (window.innerWidth <= 2000 || window.innerHeight <= 1100) {
             document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Full-HD-1920x1080/update-image-FullHD.png')";
@@ -58,11 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (window.innerWidth <= 4100 || window.innerHeight <= 2200) {
             document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/4K-UHD-3840x2160/update-image-4K-UHD.png')";
-            console.log("SUSKSES 4K");
             //4K UHD
         } else if (window.innerWidth <= 7700 || window.innerHeight <= 4400) {
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/8K-7620x4320/update-image-8K.png')";
-            console.log("SUSKSES 8K");
             //8K
         }
     }
@@ -144,12 +140,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             } 
             else if (mutation.type === "childList" && mutation.target.id === "menuSetting") {
-                console.log(divElements[4]);
-                console.log(divElements[4].querySelector("nav.navbar .dark-mode"));
                 document.getElementById("menuSetting").addEventListener('click', function() {
-                    console.log("halloX");
                     if (divElements[4].querySelector(".navbar .dark-mode").style.transform === "translateX(-33vw)") {
-                        console.log("hallo semua");
                         divElements[4].querySelector(".navbar .dark-mode").style.transform = "translateX(100vw)";
                     } else {
                         divElements[4].querySelector(".navbar .dark-mode").style.transform = "translateX(-33vw)";
