@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sourceElement.src = "assets/img-vid/HD-1280x720/background-hero-HD.mp4";
             sourceElement.type = "video/mp4";
             document.querySelector(".video-bg").appendChild(sourceElement);
-            console.log("sukses 720");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/HD-1280x720/update-image-HD.png')";
             // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/HD-1280x720/background-hero-HD.mp4";
             //HP
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sourceElement.src = "assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
             sourceElement.type = "video/mp4";
             document.querySelector(".video-bg").appendChild(sourceElement);
-            console.log("sukses 1920");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Full-HD-1920x1080/update-image-FullHD.png')";
             // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
             //FULL HD
@@ -65,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sourceElement.src = "assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.mp4";
             sourceElement.type = "video/mp4";
             document.querySelector(".video-bg").appendChild(sourceElement);
-            console.log("sukses 3K");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Quad-HD-2560x1440/update-image-QuadHD.png')";
             // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.mp4";
             //QUAD HD
@@ -74,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
             sourceElement.src = "assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
             sourceElement.type = "video/mp4";
             document.querySelector(".video-bg").appendChild(sourceElement);
-            console.log("sukses 4K");
             document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/4K-UHD-3840x2160/update-image-4K-UHD.png')";
             // document.querySelector(".hero-video figure .video-bg source").src = "assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
             //4K UHD
