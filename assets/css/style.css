@@ -2,6 +2,82 @@
   font-family: "digital-7";
   src: url("../font/digital-7.ttf") format("truetype");
 }
+@keyframes rowshadowrun {
+  0% {
+    width: 4.5%;
+    box-shadow: 0 0 5px 5px white;
+  }
+  13% {
+    width: 17.5%;
+    box-shadow: 0 0 5px 5px red;
+  }
+  17.5% {
+    width: 30, 5%;
+    box-shadow: 0 0 5px 5px #ff7f00;
+  }
+  30.5% {
+    width: 43.5%;
+    box-shadow: 0 0 5px 5px #ffff00;
+  }
+  43.5% {
+    width: 56.5%;
+    box-shadow: 0 0 5px 5px #00ff00;
+  }
+  56.5% {
+    width: 69.5%;
+    box-shadow: 0 0 5px 5px #0000ff;
+  }
+  69.5% {
+    width: 82.5%;
+    box-shadow: 0 0 5px 5px #4B0082;
+  }
+  82.5% {
+    width: 95.5%;
+    box-shadow: 0 0 5px 5px #9400D3;
+  }
+  95.5% {
+    width: 100%;
+    box-shadow: 0 0 5px 5px #000000;
+  }
+}
+@keyframes columnshadowrun {
+  0% {
+    height: 4.5%;
+    box-shadow: 0 0 5px 5px white;
+  }
+  13% {
+    height: 17.5%;
+    box-shadow: 0 0 5px 5px red;
+  }
+  17.5% {
+    height: 30, 5%;
+    box-shadow: 0 0 5px 5px #ff7f00;
+  }
+  30.5% {
+    height: 43.5%;
+    box-shadow: 0 0 5px 5px #ffff00;
+  }
+  43.5% {
+    height: 56.5%;
+    box-shadow: 0 0 5px 5px #00ff00;
+  }
+  56.5% {
+    height: 69.5%;
+    box-shadow: 0 0 5px 5px #0000ff;
+  }
+  69.5% {
+    height: 82.5%;
+    box-shadow: 0 0 5px 5px #4B0082;
+  }
+  82.5% {
+    height: 95.5%;
+    box-shadow: 0 0 5px 5px #9400D3;
+  }
+  95.5% {
+    height: 100%;
+    box-shadow: 0 0 5px 5px #000000;
+  }
+}
 @media screen and (min-width: 960px) {
   .container-xxl {
     width: 1300px;
@@ -331,6 +407,24 @@
     width: 300px;
     margin: auto;
   }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .label-update {
+    top: 16px;
+    right: -28px;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .label-update .label-center span {
+    font-size: 1.3rem;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time {
+    padding: 0 5px;
+    background-color: rgb(35, 35, 35);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time .date {
+    font-size: 1.3rem;
+    color: #ececec;
+    font-family: "digital-7", sans-serif;
+  }
 }
 @media screen and (max-width: 445px) {
   .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .hero-title h1.name-title {
@@ -403,6 +497,24 @@
   .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update {
     width: 200px;
     margin: auto;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .label-update {
+    top: 11px;
+    right: -19px;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .label-update .label-center span {
+    font-size: 0.8rem;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time {
+    padding: 0 5px;
+    background-color: rgb(35, 35, 35);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+  }
+  .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time .date {
+    font-size: 1rem;
+    color: #ececec;
+    font-family: "digital-7", sans-serif;
   }
 }
 @media screen and (max-width: 297px) {
@@ -758,7 +870,6 @@
   width: 100%;
   background-color: lightblue;
   box-shadow: 0 1.2vmax 1vmax rgba(0, 0, 0, 0.5);
-  border: 1px solid rgb(105, 193, 223);
   padding: 0 3vmax;
   z-index: 1;
 }
@@ -830,7 +941,7 @@
   height: calc(100% - 100px);
   width: 100%;
   z-index: -1;
-  background-image: url(../img-vid/background-navbarMP.jpg);
+  background-image: url(../img-vid/HD-1280x720/background-navbarMP.png);
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -847,11 +958,13 @@
   box-shadow: -5px 0 5px rgba(0, 0, 0, 0.493);
 }
 .header-content .navbarMP nav.navbar .menu-bar {
-  position: absolute;
+  position: relative;
   width: 33%;
-  height: auto;
+  height: 100%;
 }
 .header-content .navbarMP nav.navbar .menu-bar ul {
+  overflow: scroll;
+  height: 100%;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
@@ -877,6 +990,37 @@
 }
 .header-content .navbarMP nav.navbar .menu-bar ul li a:active {
   background-color: lightblue;
+}
+.header-content .navbarMP nav.navbar .menu-bar ul .menu-settings {
+  margin-top: auto;
+  direction: ltr;
+  height: auto;
+  width: 100%;
+  list-style: none;
+  background-color: rgb(35, 35, 35);
+}
+.header-content .navbarMP nav.navbar .menu-bar ul .menu-settings button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 7vmax;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+.header-content .navbarMP nav.navbar .menu-bar ul .menu-settings button:active {
+  background-color: lightblue;
+}
+.header-content .navbarMP nav.navbar .menu-bar ul .menu-settings button span {
+  color: #ececec;
+  font-size: 2vmax;
+  font-family: "Oswald", sans-serif;
+}
+.header-content .navbarMP nav.navbar .menu-bar ul .menu-settings button i {
+  margin-right: 0.5vmax;
+  color: #ececec;
+  font-size: 2vmax;
 }
 .header-content .navbarMP nav.navbar .dark-mode {
   position: absolute;
@@ -908,37 +1052,6 @@
 .header-content .navbarMP nav.navbar .dark-mode .dark-mode-wrap .btn-mode button i {
   font-size: 2vmax;
   color: rgb(35, 35, 35);
-}
-.header-content .navbarMP .menu-settings {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 7vmax;
-  width: 33%;
-  list-style: none;
-}
-.header-content .navbarMP .menu-settings button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-}
-.header-content .navbarMP .menu-settings button:active {
-  background-color: lightblue;
-}
-.header-content .navbarMP .menu-settings button span {
-  color: rgb(35, 35, 35);
-  font-size: 2vmax;
-  font-family: "Oswald", sans-serif;
-}
-.header-content .navbarMP .menu-settings button i {
-  margin-right: 0.5vmax;
-  color: rgb(35, 35, 35);
-  font-size: 2vmax;
 }
 
 .header-content {
@@ -1174,20 +1287,56 @@
   width: 100%;
 }
 .header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update {
+  display: flex;
+  flex-direction: column;
   width: 500px;
   height: 100%;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  box-shadow: -5px 5px 5px black;
+}
+.header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update::before {
+  margin: auto;
+  display: block;
+  content: "";
+  width: 100%;
+  animation: rowshadowrun 2s ease alternate infinite;
+  height: 0.02vmax;
+}
+.header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update::after {
+  margin: auto;
+  display: block;
+  content: "";
+  width: 100%;
+  animation: rowshadowrun 2s ease-in alternate infinite;
+  height: 0.02vmax;
 }
 .header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update .update-picture {
+  display: flex;
+  justify-content: space-between;
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url(../img-vid/hero.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update .update-picture::before {
+  content: "";
+  display: block;
+  margin: auto 0;
+  width: 0.2vmax;
+  animation: columnshadowrun 2s ease-in alternate-reverse infinite;
+  height: 100%;
+  z-index: -1;
+}
+.header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update .update-picture::after {
+  content: "";
+  display: block;
+  margin: auto 0;
+  width: 0.2vmax;
+  animation: columnshadowrun 2s ease-in alternate-reverse infinite;
+  height: 100%;
+  z-index: -1;
 }
 .header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update .update-picture .label-update {
   display: flex;

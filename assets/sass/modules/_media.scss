@@ -93,7 +93,7 @@
     #header {
         width: 100%;
         height: 100vh;
-        div.header-hero {
+        div.header-hero{
             .hero-primary-item {
                 .hero-title-center {
                     .title-contact  {
@@ -539,6 +539,29 @@
                             .box-update {
                                 width: 300px;
                                 margin: auto;
+                                .update-picture {
+                                    .label-update {
+                                        top: 16px;
+                                        right: -28px;
+                                        .label-center {
+                                            span {
+                                                font-size: 1.3rem;
+                                                
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        padding: 0 5px;
+                                        background-color: var.$secondaryColor;
+                                        border-top: 1px solid black;
+                                        border-right: 1px solid black;
+                                        .date {
+                                            font-size: 1.3rem;
+                                            color: var.$primaryColor;
+                                            font-family: var.$digital7Font;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -629,9 +652,10 @@
                                 }
                             }
                         }
+                        
                     }
                 }
-                }
+            }
         }
     }
 }
@@ -663,6 +687,28 @@
                             .box-update {
                                 width: 200px;
                                 margin: auto;
+                                .update-picture {
+                                    .label-update {
+                                        top: 11px;
+                                        right: -19px;
+                                        .label-center {
+                                            span {
+                                                font-size: 0.8rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        padding: 0 5px;
+                                        background-color: var.$secondaryColor;
+                                        border-top: 1px solid black;
+                                        border-right: 1px solid black;
+                                        .date {
+                                            font-size: 1rem;
+                                            color: var.$primaryColor;
+                                            font-family: var.$digital7Font;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

@@ -42,6 +42,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.style.overflow = "visible";
             }
         }
+
+        // Ukuran Gambar Sesuai Resolusi Layar Perangkat 
+        if (window.innerWidth <= 1300 || window.innerHeight <= 800) {
+            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/HD-1280x720/background-hero-HD.mp4";
+            document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/HD-1280x720/update-image-HD.png')";
+        } else if (window.innerWidth <= 2000 || window.innerHeight <= 1100) {
+            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.mp4";
+            document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Full-HD-1920x1080/update-image-FullHD.png')";
+            //FULL HD
+        } else if (window.innerWidth <= 2600 || window.innerHeight <= 1500) {
+            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.mp4";
+            document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Quad-HD-2560x1440/update-image-QuadHD.png')";
+            //QUAD HD
+        } else if (window.innerWidth <= 4100 || window.innerHeight <= 2200) {
+            document.querySelector(".hero-video figure .video-bg source").src = "../assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.mp4";
+            document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/4K-UHD-3840x2160/update-image-4K-UHD.png')";
+            console.log("SUSKSES 4K");
+            //4K UHD
+        } else if (window.innerWidth <= 7700 || window.innerHeight <= 4400) {
+            document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/8K-7620x4320/update-image-8K.png')";
+            console.log("SUSKSES 8K");
+            //8K
+        }
     }
 
     window.addEventListener("load", mobileView);
@@ -87,9 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 divElements[4].querySelector(".hamburger-menu").classList.add("hamburger-menu-close");
                                 divElements[4].querySelector(".hamburger-menu").classList.remove("hamburger-menu");
 
-                                divElements[4].appendChild(headerMenu.querySelector("nav.navbar .dark-mode .dark-mode-wrap .btn-mode").cloneNode(true));
-                                divElements[4].querySelectorAll(".navbar + .btn-mode")[0].classList.add("menu-settings");
-                                divElements[4].querySelectorAll(".navbar + .btn-mode")[0].classList.remove("btn-mode");
+                                divElements[4].querySelector(".navbar .menu-bar ul ").appendChild(headerMenu.querySelector("nav.navbar .dark-mode .dark-mode-wrap .btn-mode").cloneNode(true));
+                                divElements[4].querySelectorAll(".navbar .btn-mode")[0].classList.add("menu-settings");
+                                divElements[4].querySelectorAll(".navbar .btn-mode")[0].classList.remove("btn-mode");
                                 divElements[4].querySelectorAll(".menu-settings button")[0].appendChild(divElements[5]);
                                 divElements[4].querySelectorAll(".menu-settings button")[0].id = "menuSetting";
                                 divElements[4].querySelectorAll(".menu-settings button span")[0].textContent = "Pengaturan";
@@ -138,9 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(headerNavbar, { childList: true, subtree: true });
     
-    
-
-
     window.onload = function() {
         var bodyHeight = document.body.clientHeight;
         var header = document.querySelector('.header-navbar');

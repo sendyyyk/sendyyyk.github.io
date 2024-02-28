@@ -213,18 +213,61 @@
                         height: 400px;
                         width: 100% ;
                         .box-update {
+                            display: flex;
+                            flex-direction: column;
                             width: 500px;
                             height: 100%;
                             backdrop-filter: blur(5px);
-                            box-shadow: -5px 5px 5px black;
+                            // box-shadow: 0 0 2px 2px rgb(255, 0, 0),
+                            // 0 0 4px 4px #ff7f00,
+                            // 0 0 6px 6px #ffff00,
+                            // 0 0 8px 8px #00ff00,
+                            // 0 0 10px 10px #0000ff,
+                            // 0 0 12px 12px #4B0082,
+                            // 0 0 14px 14px #9400D3;
+                            &::before {
+                                margin: auto;
+                                display: block;
+                                content: "";
+                                width: 100%;
+                                animation: rowshadowrun 2s ease alternate infinite;
+                                height: 0.02vmax;
+                            }
+                            &::after {
+                                margin: auto;
+                                display: block;
+                                content: "";
+                                width: 100%;
+                                animation: rowshadowrun 2s ease-in alternate infinite;
+                                height: 0.02vmax;
+                            }
                             .update-picture {
+                                display: flex;
+                                justify-content: space-between;
                                 position: relative;
                                 width: 100%;
                                 height: 100%;
-                                background-image: url(../img-vid/hero.png);
                                 background-repeat: no-repeat;
                                 background-position: center;
                                 background-size: cover;
+                                &::before {
+                                    content: "";
+                                    display: block;
+                                    margin: auto 0;
+                                    width: 0.2vmax;
+                                    animation: columnshadowrun 2s ease-in alternate-reverse infinite;
+                                    height: 100%;
+                                    z-index: -1;
+                                }
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    margin: auto 0;
+                                    width: 0.2vmax;
+                                    animation: columnshadowrun 2s ease-in alternate-reverse infinite;
+                                    height: 100%;
+                                    z-index: -1;
+                                }
                                 .label-update {
                                     display: flex;
                                     position: absolute;

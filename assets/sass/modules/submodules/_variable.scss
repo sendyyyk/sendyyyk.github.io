@@ -18,3 +18,81 @@ $alexBrushFont : 'Alex Brush', sans-serif;
     font-family: 'digital-7';
     src: url('../font/digital-7.ttf') format('truetype');
 }
+
+@keyframes rowshadowrun {
+    0% {
+        width: 4.5%;
+        box-shadow: 0 0 5px 5px white;
+    }
+    13% {
+        width: 17.5%;
+        box-shadow: 0 0 5px 5px red;
+    }
+    17.5% {
+        width: 30,5%;
+        box-shadow: 0 0 5px 5px #ff7f00;
+    }
+    30.5% {
+        width: 43.5%;
+        box-shadow: 0 0 5px 5px #ffff00;
+    }
+    43.5% {
+        width: 56.5%;
+        box-shadow: 0 0 5px 5px #00ff00;
+    }
+    56.5% {
+        width: 69.5%;
+        box-shadow: 0 0 5px 5px #0000ff;
+    }
+    69.5% {
+        width: 82.5%;
+        box-shadow: 0 0 5px 5px #4B0082;
+    }
+    82.5% {
+        width: 95.5%;
+        box-shadow: 0 0 5px 5px #9400D3;
+    }
+    95.5% {
+        width: 100%;
+        box-shadow: 0 0 5px 5px #000000;
+    }
+}
+
+@keyframes columnshadowrun {
+    0% {
+        height: 4.5%;
+        box-shadow: 0 0 5px 5px white;
+    }
+    13% {
+        height: 17.5%;
+        box-shadow: 0 0 5px 5px red;
+    }
+    17.5% {
+        height: 30,5%;
+        box-shadow: 0 0 5px 5px #ff7f00;
+    }
+    30.5% {
+        height: 43.5%;
+        box-shadow: 0 0 5px 5px #ffff00;
+    }
+    43.5% {
+        height: 56.5%;
+        box-shadow: 0 0 5px 5px #00ff00;
+    }
+    56.5% {
+        height: 69.5%;
+        box-shadow: 0 0 5px 5px #0000ff;
+    }
+    69.5% {
+        height: 82.5%;
+        box-shadow: 0 0 5px 5px #4B0082;
+    }
+    82.5% {
+        height: 95.5%;
+        box-shadow: 0 0 5px 5px #9400D3;
+    }
+    95.5% {
+        height: 100%;
+        box-shadow: 0 0 5px 5px #000000;
+    }
+}
