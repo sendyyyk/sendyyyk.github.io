@@ -687,7 +687,10 @@
                             .box-update {
                                 width: 200px;
                                 margin: auto;
+                                border-radius: 7px;
+                                border-width: 2px;
                                 .update-picture {
+                                    border-radius: 7px;
                                     .label-update {
                                         top: 11px;
                                         right: -19px;
@@ -700,8 +703,7 @@
                                     .update-time {
                                         padding: 0 5px;
                                         background-color: var.$secondaryColor;
-                                        border-top: 1px solid black;
-                                        border-right: 1px solid black;
+                                        border-bottom-left-radius: 7px;
                                         .date {
                                             font-size: 1rem;
                                             color: var.$primaryColor;
@@ -840,6 +842,29 @@
                             .box-update {
                                 width: 150px;
                                 margin: auto;
+                                border-radius: 5px;
+                                .update-picture {
+                                    border-radius: 5px;
+                                    .label-update {
+                                        top: 10px;
+                                        right: -16px;
+                                        .label-center {
+                                            span {
+                                                font-size: 0.6rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        padding: 0 5px;
+                                        background-color: var.$secondaryColor;
+                                        border-bottom-left-radius: 5px;
+                                        .date {
+                                            font-size: 0.7rem;
+                                            color: var.$primaryColor;
+                                            font-family: var.$digital7Font;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -905,6 +930,26 @@
                             .box-update {
                                 width: 120px;
                                 margin: auto;
+                                border-radius: 3px;
+                                border-width: 1.5px;
+                                .update-picture {
+                                    .label-update {
+                                        top: 7.4px;
+                                        right: -13px;
+                                        .label-center {
+                                            span {
+                                                font-size: 0.4rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        border-bottom-left-radius: 3px;
+                                        .date {
+                                            line-height: 10%;
+                                            font-size: 0.5rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -962,6 +1007,25 @@
                             .box-update {
                                 width: 90px;
                                 margin: auto;
+                                .update-picture {
+                                    .label-update {
+                                        top: 5px;
+                                        right: -9.5px;
+                                        padding: 0 3px;
+                                        .label-center {
+                                            line-height: 10%;
+                                            span {
+                                                font-size: 0.4rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        .date {
+                                            line-height: 10%;
+                                            font-size: 0.35rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1031,6 +1095,26 @@
                             margin-top: 8px;
                             .box-update {
                                 width: 70px;
+                                .update-picture {
+                                    .label-update {
+                                        top: 4px;
+                                        right: -7px;
+                                        padding: 0 3px;
+                                        .label-center {
+                                            line-height: 49%;
+                                            span {
+                                                font-size: 0.3rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        padding: 0 2.5px;
+                                        .date {
+                                            line-height: 10%;
+                                            font-size: 0.3rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1102,6 +1186,26 @@
                             .box-update {
                                 width: 50px;
                                 margin: auto;
+                                .update-picture {
+                                    .label-update {
+                                        top: 3px;
+                                        right: -6px;
+                                        .label-center {
+                                            line-height: 38%;
+                                            span {
+                                                font-size: 0.2rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        border-top: 0.1px solid black;
+                                        border-right: 0.1px solid black;
+                                        .date {
+                                            line-height: 10%;
+                                            font-size: 0.2rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1176,6 +1280,30 @@
                             .box-update {
                                 width: 30px;
                                 margin: auto;
+                                border-radius: 2px;
+                                border-width: 1px;
+                                .update-picture {
+                                    border-radius: 1px;
+                                    .label-update {
+                                        top: 1px;
+                                        right: -3px;
+                                        padding: 0 1.5px;
+                                        .label-center {
+                                            line-height: 10%;
+                                            span {
+                                                font-size: 0.1rem;
+                                            }
+                                        }
+                                    }
+                                    .update-time {
+                                        border-top: 0.01px solid black;
+                                        border-right: 0.05px solid black;
+                                        .date {
+                                            line-height: 10%;
+                                            font-size: 0.1rem;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

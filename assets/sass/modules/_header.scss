@@ -34,7 +34,7 @@
                             font-size: 60px;
                             white-space: nowrap;
                             font-family: var.$alexBrushFont;
-                            color: var.$secondaryColor;
+                            color: var.$primaryColor;
                         }
                     }
                 }
@@ -64,7 +64,7 @@
                                 align-items: center;
                                 flex-direction: column;
                                 height: 50%;
-                                color: var.$secondaryColor;
+                                color: var.$primaryColor;
                                 text-align: center;
                                 text-decoration: none;
                                 font-size: 20px;
@@ -118,7 +118,7 @@
                                 backdrop-filter: blur(1px);
                                 i {
                                     display: block;
-                                    color: var.$secondaryColor;
+                                    color: var.$primaryColor;
                                     font-size: 15px;
                                 }
                                 &:hover {
@@ -132,23 +132,13 @@
         }
     }
 
-    .hero-video {
+    #hero-image {
         width: 100%;
         height: 100%;
-        figure {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            .video-bg {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                min-height: 100vh;
-                min-width: 100vw;
-                z-index: -1;
-            }
-        }
+        background-image: url("../img-vid/Default/background-hero.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .header-hero {
@@ -175,7 +165,7 @@
                             margin: 55px 0;
                             font-size: 80px;
                             font-family: var.$aliceFont;
-                            color: var.$secondaryColor;
+                            color: var.$primaryColor;
                         }
                     }
         
@@ -195,7 +185,7 @@
                             span {
                                 display: block;
                                 margin: auto;
-                                color: var.$secondaryColor;
+                                color: var.$primaryColor;
                                 font-size: 25px;
                                 font-family: var.$acmeFont;
                             }
@@ -217,56 +207,21 @@
                             width: 500px;
                             height: 100%;
                             backdrop-filter: blur(5px);
-                            // box-shadow: 0 0 2px 2px rgb(255, 0, 0),
-                            // 0 0 4px 4px #ff7f00,
-                            // 0 0 6px 6px #ffff00,
-                            // 0 0 8px 8px #00ff00,
-                            // 0 0 10px 10px #0000ff,
-                            // 0 0 12px 12px #4B0082,
-                            // 0 0 14px 14px #9400D3;
-                            &::before {
-                                margin: auto;
-                                display: block;
-                                content: "";
-                                width: 100%;
-                                animation: rowshadowrun 2s ease alternate infinite;
-                                height: 0.02vmax;
-                            }
-                            &::after {
-                                margin: auto;
-                                display: block;
-                                content: "";
-                                width: 100%;
-                                animation: rowshadowrun 2s ease-in alternate infinite;
-                                height: 0.02vmax;
-                            }
+                            border-radius: 10px;
+                            border-width: 3px;
+                            border-style: solid;
+                            animation: rowshadowrun 5s ease-in infinite alternate;
                             .update-picture {
                                 display: flex;
                                 justify-content: space-between;
                                 position: relative;
                                 width: 100%;
                                 height: 100%;
+                                background-image: url(../img-vid/Default/update-image-8K.png);
                                 background-repeat: no-repeat;
                                 background-position: center;
                                 background-size: cover;
-                                &::before {
-                                    content: "";
-                                    display: block;
-                                    margin: auto 0;
-                                    width: 0.2vmax;
-                                    animation: columnshadowrun 2s ease-in alternate-reverse infinite;
-                                    height: 100%;
-                                    z-index: -1;
-                                }
-                                &::after {
-                                    content: "";
-                                    display: block;
-                                    margin: auto 0;
-                                    width: 0.2vmax;
-                                    animation: columnshadowrun 2s ease-in alternate-reverse infinite;
-                                    height: 100%;
-                                    z-index: -1;
-                                }
+                                border-radius: 10px;
                                 .label-update {
                                     display: flex;
                                     position: absolute;
@@ -300,6 +255,7 @@
                                     background-color: var.$secondaryColor;
                                     border-top: 1px solid black;
                                     border-right: 1px solid black;
+                                    border-bottom-left-radius: 10px;
                                     .date {
                                         font-size: 1.5rem;
                                         color: var.$primaryColor;
