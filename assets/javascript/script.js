@@ -39,29 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.style.overflow = "visible";
             }
         }
-
-        // // Ukuran Gambar Sesuai Resolusi Layar Perangkat 
-        // if (window.innerWidth <= 1300) {
-        //     document.getElementById("hero-image").style.backgroundImage = "url('assets/img-vid/HD-1280x720/background-hero-HD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/HD-1280x720/update-image-HD.png')";
-        //     //HP
-        // } else if (window.innerWidth <= 2000) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Full-HD-1920x1080/update-image-FullHD.png')";
-        //     //FULL HD
-        // } else if (window.innerWidth <= 2600) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Quad-HD-2560x1440/update-image-QuadHD.png')";
-        //     //QUAD HD
-        // } else if (window.innerWidth <= 4100) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/4K-UHD-3840x2160/update-image-4K-UHD.png')";
-        //     //4K UHD
-        // } else if (window.innerWidth <= 7700) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/8K-7620x4320/background-hero-8K.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/8K-7620x4320/update-image-8K.png')";
-        //     //8K
-        // }
     }
 
     window.addEventListener("load", mobileView);
