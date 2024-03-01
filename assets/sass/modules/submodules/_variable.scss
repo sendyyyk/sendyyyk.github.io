@@ -19,18 +19,7 @@ $alexBrushFont : 'Alex Brush', sans-serif;
     src: url('../font/digital-7.ttf') format('truetype');
 }
 
-// @keyframes rowgradientrun {
-//     0% {
-//         background-position: left;
-//     }
-
-//     100% {
-//         background-position: right;
-//     }
-// }
-
-
-@keyframes rowshadowrun {
+@keyframes borderAnimation {
     0% {
         // width: 4.5%;
         border-color:  white;
@@ -69,11 +58,11 @@ $alexBrushFont : 'Alex Brush', sans-serif;
     }
 }
 
-// @keyframes columngradientrun {
-//     0% {
-//         background-position: 0% 0%; /* Posisi awal */
-//     }
-//     100% {
-//         background-position: 0% 100%; /* Posisi akhir */
-//     }
-// }
+@keyframes scrollingText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        // transform: translateX(-1px);
+    }
+}

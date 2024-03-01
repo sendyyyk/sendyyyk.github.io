@@ -459,6 +459,22 @@
             }
         }
     }
+    // MAIN CONTENT
+    .main-content {
+        .main-container {
+            .main-scroll-time-date {
+                section.scroll-text-content {
+                    .scroll-text {
+                        .display-scroll-text {
+                            .scroll-mode {
+                                animation-duration: 10s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
     
 @media screen and (max-width: 860px) {
@@ -491,6 +507,7 @@
 
 
 @media screen and (max-width: 645px) {
+    // HEADER CONTENT
     .header-content {
         div.header-navbar {
             .header-menu {
@@ -561,6 +578,44 @@
                                             font-family: var.$digital7Font;
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 100px;
+                section.time-digital-content {
+                    height: 50px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 40px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 50px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 40px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 100px;
+                    .scroll-text {
+                        height: 50px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    font-size: 30px;
                                 }
                             }
                         }
@@ -718,6 +773,44 @@
             }
         }
     }
+
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 60px;
+                section.time-digital-content {
+                    height: 30px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 25px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 30px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 25px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 60px;
+                    .scroll-text {
+                        height: 30px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -864,6 +957,44 @@
                                             font-family: var.$digital7Font;
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 50px;
+                section.time-digital-content {
+                    height: 25px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 25px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 50px;
+                    .scroll-text {
+                        height: 25px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    font-size: 13px;
                                 }
                             }
                         }
@@ -1033,6 +1164,44 @@
             }
         }
     }
+
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 40px;
+                section.time-digital-content {
+                    height: 20px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 20px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 40px;
+                    .scroll-text {
+                        height: 20px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 110px) {
@@ -1114,6 +1283,44 @@
                                             font-size: 0.3rem;
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 30px;
+                section.time-digital-content {
+                    height: 15px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 10px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 15px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 10px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 30px;
+                    .scroll-text {
+                        height: 15px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    font-size: 7px;
                                 }
                             }
                         }
@@ -1213,6 +1420,45 @@
             }
         }
     }
+
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 26px;
+                section.time-digital-content {
+                    height: 13px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 7px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 13px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 7px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 26px;
+                    .scroll-text {
+                        height: 13px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    line-height: 60%;
+                                    font-size: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 70px) {
@@ -1303,6 +1549,44 @@
                                             font-size: 0.1rem;
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //MAIN CONTENT
+    main.main-content {
+        .main-container {
+            .main-scroll-time-date {
+                max-height: 20px;
+                section.time-digital-content {
+                    height: 10px;
+                    .time-digital {
+                        h1#display-time {
+                            font-size: 5px;
+                        }
+                    }
+                }
+                section.date-digital-content {
+                    height: 10px;
+                    .date-digital {
+                        h1#display-date {
+                            font-size: 5px;
+                        }
+                    }
+                }
+                section.scroll-text-content {
+                    height: 20px;
+                    .scroll-text {
+                        height: 10px;
+                        .display-scroll-text {
+                            .scroll-mode {
+                                h1#display-text {
+                                    line-height: 70%;
+                                    font-size: 3px;
                                 }
                             }
                         }

@@ -2,7 +2,7 @@
   font-family: "digital-7";
   src: url("../font/digital-7.ttf") format("truetype");
 }
-@keyframes rowshadowrun {
+@keyframes borderAnimation {
   0% {
     border-color: white;
   }
@@ -29,6 +29,11 @@
   }
   95.5% {
     border-color: #000000;
+  }
+}
+@keyframes scrollingText {
+  0% {
+    transform: translateX(100%);
   }
 }
 @media screen and (min-width: 960px) {
@@ -311,6 +316,9 @@
     left: 25px;
     right: 25px;
   }
+  .main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode {
+    animation-duration: 10s;
+  }
 }
 @media screen and (max-width: 860px) {
   .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .hero-title h1.name-title {
@@ -377,6 +385,30 @@
     font-size: 1.3rem;
     color: #ececec;
     font-family: "digital-7", sans-serif;
+  }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 100px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 50px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 40px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 50px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 40px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 100px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 50px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 445px) {
@@ -472,6 +504,30 @@
     font-size: 1rem;
     color: #ececec;
     font-family: "digital-7", sans-serif;
+  }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 60px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 30px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 25px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 30px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 25px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 60px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 30px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 297px) {
@@ -580,6 +636,30 @@
     font-size: 0.7rem;
     color: #ececec;
     font-family: "digital-7", sans-serif;
+  }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 50px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 25px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 15px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 25px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 15px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 50px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 25px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    font-size: 13px;
   }
 }
 @media screen and (max-width: 170px) {
@@ -690,6 +770,30 @@
     line-height: 10%;
     font-size: 0.35rem;
   }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 40px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 20px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 12px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 20px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 12px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 40px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 20px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    font-size: 10px;
+  }
 }
 @media screen and (max-width: 110px) {
   .header-content div.header-navbar .header-menu {
@@ -753,6 +857,30 @@
   .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time .date {
     line-height: 10%;
     font-size: 0.3rem;
+  }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 30px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 15px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 10px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 15px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 10px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 30px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 15px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    font-size: 7px;
   }
 }
 @media screen and (max-width: 90px) {
@@ -819,6 +947,31 @@
   .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time .date {
     line-height: 10%;
     font-size: 0.2rem;
+  }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 26px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 13px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 7px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 13px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 7px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 26px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 13px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    line-height: 60%;
+    font-size: 5px;
   }
 }
 @media screen and (max-width: 70px) {
@@ -896,6 +1049,31 @@
   .header-content div.header-hero .hero-primary-item .hero-title-center div.title-contact .screen-content .box-update .update-picture .update-time .date {
     line-height: 10%;
     font-size: 0.1rem;
+  }
+  main.main-content .main-container .main-scroll-time-date {
+    max-height: 20px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content {
+    height: 10px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
+    font-size: 5px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content {
+    height: 10px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
+    font-size: 5px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
+    height: 20px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text {
+    height: 10px;
+  }
+  main.main-content .main-container .main-scroll-time-date section.scroll-text-content .scroll-text .display-scroll-text .scroll-mode h1#display-text {
+    line-height: 70%;
+    font-size: 3px;
   }
 }
 .header-content .header-navbar .header-menu .hamburger-menu {
@@ -1054,7 +1232,7 @@
 }
 .header-content .navbarMP nav.navbar .menu-bar ul li a span {
   color: rgb(35, 35, 35);
-  font-size: 2vmax;
+  font-size: 1.7vmax;
   font-family: "Oswald", sans-serif;
 }
 .header-content .navbarMP nav.navbar .menu-bar ul li a:active {
@@ -1083,13 +1261,13 @@
 }
 .header-content .navbarMP nav.navbar .menu-bar ul .menu-settings button span {
   color: #ececec;
-  font-size: 2vmax;
+  font-size: 1.7vmax;
   font-family: "Oswald", sans-serif;
 }
 .header-content .navbarMP nav.navbar .menu-bar ul .menu-settings button i {
   margin-right: 0.5vmax;
   color: #ececec;
-  font-size: 2vmax;
+  font-size: 1.7vmax;
 }
 .header-content .navbarMP nav.navbar .dark-mode {
   position: absolute;
@@ -1118,7 +1296,7 @@
   box-shadow: -0.2vmax -0.2vmax 1vmax black;
 }
 .header-content .navbarMP nav.navbar .dark-mode .dark-mode-wrap .btn-mode button i {
-  font-size: 2vmax;
+  font-size: 1.7vmax;
   color: rgb(35, 35, 35);
 }
 
@@ -1345,6 +1523,8 @@
 }
 .header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update {
   display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
   flex-direction: column;
   width: 500px;
   height: 100%;
@@ -1353,12 +1533,14 @@
   border-radius: 10px;
   border-width: 3px;
   border-style: solid;
-  animation: rowshadowrun 5s ease-in infinite alternate;
+  animation: borderAnimation 5s ease-in infinite alternate;
 }
 .header-content .header-hero .hero-primary-item .hero-title-center .title-contact .screen-content .box-update .update-picture {
-  display: flex;
-  justify-content: space-between;
   position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row;
   width: 100%;
   height: 100%;
   background-image: url(../img-vid/Default/update-image-8K.png);
@@ -1411,9 +1593,118 @@
   font-family: "digital-7", sans-serif;
 }
 
+main.main-content {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 -10px 30px 20px #ececec;
+  overflow-x: auto;
+}
+main.main-content .main-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 2000px;
+  margin: auto;
+}
+main.main-content .main-container .main-scroll-time-date {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row;
+  position: relative;
+  max-height: 150px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+main.main-content .main-container .main-scroll-time-date .time-digital-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 75px;
+}
+main.main-content .main-container .main-scroll-time-date .time-digital-content .time-digital {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 90%;
+}
+main.main-content .main-container .main-scroll-time-date .time-digital-content .time-digital #display-time {
+  font-size: 60px;
+  font-weight: 900;
+  font-family: "digital-7", sans-serif;
+  color: red;
+}
+main.main-content .main-container .main-scroll-time-date .date-digital-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 75px;
+}
+main.main-content .main-container .main-scroll-time-date .date-digital-content .date-digital {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 90%;
+}
+main.main-content .main-container .main-scroll-time-date .date-digital-content .date-digital #display-date {
+  font-size: 60px;
+  font-weight: 900;
+  font-family: "digital-7", sans-serif;
+  color: red;
+}
+main.main-content .main-container .main-scroll-time-date .scroll-text-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: row;
+  height: 150px;
+  width: 100%;
+}
+main.main-content .main-container .main-scroll-time-date .scroll-text-content .scroll-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 75px;
+}
+main.main-content .main-container .main-scroll-time-date .scroll-text-content .scroll-text .display-scroll-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 95%;
+  height: 60%;
+  overflow: hidden;
+}
+main.main-content .main-container .main-scroll-time-date .scroll-text-content .scroll-text .display-scroll-text div.scroll-mode {
+  margin: auto 0;
+  width: 100%;
+  white-space: nowrap;
+}
+main.main-content .main-container .main-scroll-time-date .scroll-text-content .scroll-text .display-scroll-text div.scroll-mode #display-text {
+  animation-name: scrollingText;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+  font-size: 50px;
+  font-weight: 900;
+  font-family: "digital-7", sans-serif;
+  color: red;
+}
+
 body {
-  box-sizing: 0;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 4000px;
 }/*# sourceMappingURL=style.css.map */

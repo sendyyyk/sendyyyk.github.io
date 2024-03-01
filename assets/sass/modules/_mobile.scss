@@ -145,7 +145,7 @@
                             text-decoration: none;
                             span {
                                 color: var.$secondaryColor;
-                                font-size: 2vmax;
+                                font-size: 1.7vmax;
                                 font-family: var.$oswaldFont; 
                             }
                             &:active {
@@ -171,13 +171,13 @@
                             }
                             span {
                                 color: var.$primaryColor;
-                                font-size: 2vmax;
+                                font-size: 1.7vmax;
                                 font-family: var.$oswaldFont; 
                             }
                             i {
                                 margin-right: 0.5vmax;
                                 color: var.$primaryColor;
-                                font-size: 2vmax;
+                                font-size: 1.7vmax;
                             }
                         }
                     }
@@ -203,7 +203,7 @@
                             background-color: transparent;
                             box-shadow: -0.2vmax -0.2vmax 1vmax black;
                             i {
-                                font-size: 2vmax;
+                                font-size: 1.7vmax;
                                 color: var.$secondaryColor;
                             }
                         }

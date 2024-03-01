@@ -39,29 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.style.overflow = "visible";
             }
         }
-
-        // // Ukuran Gambar Sesuai Resolusi Layar Perangkat 
-        // if (window.innerWidth <= 1300) {
-        //     document.getElementById("hero-image").style.backgroundImage = "url('assets/img-vid/HD-1280x720/background-hero-HD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/HD-1280x720/update-image-HD.png')";
-        //     //HP
-        // } else if (window.innerWidth <= 2000) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/Full-HD-1920x1080/background-hero-FullHD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Full-HD-1920x1080/update-image-FullHD.png')";
-        //     //FULL HD
-        // } else if (window.innerWidth <= 2600) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/Quad-HD-2560x1440/background-hero-QuadHD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/Quad-HD-2560x1440/update-image-QuadHD.png')";
-        //     //QUAD HD
-        // } else if (window.innerWidth <= 4100) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/4K-UHD-3840x2160/background-hero-4K-UHD.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/4K-UHD-3840x2160/update-image-4K-UHD.png')";
-        //     //4K UHD
-        // } else if (window.innerWidth <= 7700) {
-        //     document.getElementById("hero-image").style.backgroundImage =  "url('assets/img-vid/8K-7620x4320/background-hero-8K.png')";
-        //     document.getElementById("updateImage").style.backgroundImage = "url('assets/img-vid/8K-7620x4320/update-image-8K.png')";
-        //     //8K
-        // }
     }
 
     window.addEventListener("load", mobileView);
@@ -155,13 +132,50 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(headerNavbar, { childList: true, subtree: true });
     
     window.onload = function() {
-        var bodyHeight = document.body.clientHeight;
-        var header = document.querySelector('.header-navbar');
+        let bodyHeight = document.body.clientHeight;
+        let header = document.querySelector('.header-navbar');
         header.style.height = bodyHeight + 'px';
         window.addEventListener('resize', function() {
-            var bodyHeight = document.body.clientHeight;
+            let bodyHeight = document.body.clientHeight;
             header.style.height = bodyHeight + 'px';
         });
     }
+    // MAIN SCRIPT
+    // =================== // SCROLL TEXT SCRIPT // =================== //
+    let displayText = document.getElementById('display-text');
+    let textLength = displayText.innerText.length;
+    let transformValue = -1 * textLength + 'ch';
+    displayText.style.transform = `translateX(${transformValue})`;
+    
+    // =================== // TIME DIGITAL SCRIPT // =================== //
+    
+    function updateTime() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        
+        document.getElementById('display-time').innerHTML = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+        
+        setTimeout(updateTime, 1000);
+    }
+    
+    updateTime();
+    
+    // =================== // DATE DIGITAL SCRIPT // =================== //
 
+    var currentDate = new Date();
+
+        var tanggal = currentDate.getDate();
+        var bulan = currentDate.getMonth() + 1;
+        var tahun = currentDate.getFullYear();
+
+        document.getElementById('display-date').textContent = tanggal + '-' + bulan + '-' + tahun;
 });

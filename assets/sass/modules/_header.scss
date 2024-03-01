@@ -9,7 +9,6 @@
         @include mix.flexBox($justify:center);
         position: absolute;
         width: 100%;
-        // overflow-x: hidden;
         .header-menu {
             @include mix.flexBox($align: center, $justify:space-between);
             position: sticky;
@@ -202,19 +201,17 @@
                         height: 400px;
                         width: 100% ;
                         .box-update {
-                            display: flex;
-                            flex-direction: column;
+                            @include mix.flexBox($dir: column);
                             width: 500px;
                             height: 100%;
                             backdrop-filter: blur(5px);
                             border-radius: 10px;
                             border-width: 3px;
                             border-style: solid;
-                            animation: rowshadowrun 5s ease-in infinite alternate;
+                            animation: borderAnimation 5s ease-in infinite alternate;
                             .update-picture {
-                                display: flex;
-                                justify-content: space-between;
                                 position: relative;
+                                @include mix.flexBox($justify: space-between);
                                 width: 100%;
                                 height: 100%;
                                 background-image: url(../img-vid/Default/update-image-8K.png);
