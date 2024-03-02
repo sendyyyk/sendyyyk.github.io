@@ -465,13 +465,13 @@
     height: 50px;
   }
   main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
-    font-size: 40px;
+    font-size: 38px;
   }
   main.main-content .main-container .main-scroll-time-date section.date-digital-content {
     height: 50px;
   }
   main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
-    font-size: 40px;
+    font-size: 38px;
   }
   main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
     height: 100px;
@@ -618,13 +618,13 @@
     height: 30px;
   }
   main.main-content .main-container .main-scroll-time-date section.time-digital-content .time-digital h1#display-time {
-    font-size: 25px;
+    font-size: 24px;
   }
   main.main-content .main-container .main-scroll-time-date section.date-digital-content {
     height: 30px;
   }
   main.main-content .main-container .main-scroll-time-date section.date-digital-content .date-digital h1#display-date {
-    font-size: 25px;
+    font-size: 24px;
   }
   main.main-content .main-container .main-scroll-time-date section.scroll-text-content {
     height: 60px;
