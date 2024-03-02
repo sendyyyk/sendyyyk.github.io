@@ -206,6 +206,9 @@
                                 font-size: 1.7vmax;
                                 color: var.$secondaryColor;
                             }
+                            &:active {
+                                background-color: aqua;
+                            }
                         }
                     }
                 }

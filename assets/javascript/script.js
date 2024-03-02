@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.createElement("div"), // garis hamburger 1
         document.createElement("div"), // garis hamburger 2
         document.createElement("div"), // garis hamburger 3
-        document.createElement("div"), // menu navbar Mobile
         document.createElement("span"), // span pengaturan di menu Mobile
 
     ];
@@ -33,9 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (window.innerWidth >= 1100) {
             if (headerMenu.contains(divElements[0])) {
                 divElements[0].remove();
-            } else if (divElements[4]) {
-                divElements[4].style.transform = "translateX(100vw)";
-                divElements[4].style.display = "none";
+            } else if (document.querySelector(".navbarMP")) {
+                document.querySelector(".navbarMP").remove();
                 document.body.style.overflow = "visible";
             }
         }
@@ -59,13 +57,50 @@ document.addEventListener("DOMContentLoaded", function () {
             if (mutation.previousSibling === null && mutation.target.classList.contains("navbarMP")) {
                 document.querySelector(".hamburger-menu-close").addEventListener('click', async function() {
                     await delayMenu();
-                    divElements[4].style.transform = "translateX(100vw)";
+                    document.querySelector(".navbarMP").style.transform = "translateX(100vw)";
                     document.body.style.overflow = "visible";
                     await delayRemoveMenu();
-                    divElements[4].style.transform = "translateX(100vw)";
-                    divElements[4].style.display = "none";
+                    document.querySelector(".navbarMP").style.transform = "translateX(100vw)";
+                    document.querySelector(".navbarMP").style.display = "none";
                     document.body.style.overflow = "visible";
                 });
+                document.querySelector(".navbarMP button.theme-mode").addEventListener('click', function () {
+                    if (document.querySelector(".theme-mode .material-icons").innerText.trim() === "dark_mode" || document.querySelector(".navbarMP button.theme-mode .material-icons").innerText.trim() === "dark_mode") {
+                        document.querySelector(".theme-mode .material-icons").textContent = "light_mode";
+                        document.querySelector(".navbarMP button.theme-mode .material-icons").textContent = "light_mode";
+                        document.querySelector("main.main-content").style.backgroundColor = "#232323";
+                        document.querySelector("main.main-content").style.boxShadow = "0 -10px 30px 20px #232323";
+                        document.querySelector(".pop-up-theme").style.display = "flex";
+                        document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Dark.";
+                        document.querySelector('.line-checklist').classList.remove('wide');
+                        document.querySelector('.line-checklist').classList.remove('hige');
+                        setTimeout(function() {
+                            document.querySelector(".line-checklist").classList.add('wide');
+                            document.querySelector(".line-checklist").classList.add("hige");
+                        }, 100);
+                        document.querySelector(".navbarMP").style.display = "none";
+                        document.querySelector(".navbarMP").style.transform = "translateX(100vw)";
+                        document.querySelector(".navbarMP").querySelector(".navbar .dark-mode").style.transform = "translateX(100vw)";
+                        document.body.style.overflow = "hidden";
+                    } else {
+                        document.querySelector(".theme-mode .material-icons").textContent = "dark_mode";
+                        document.querySelector(".navbarMP button.theme-mode .material-icons").textContent = "dark_mode";
+                        document.querySelector("main.main-content").style.backgroundColor = "#ececec";
+                        document.querySelector("main.main-content").style.boxShadow = "0 -10px 30px 20px #ececec";
+                        document.querySelector(".pop-up-theme").style.display = "flex";
+                        document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Light.";
+                        document.querySelector('.line-checklist').classList.remove('wide');
+                        document.querySelector('.line-checklist').classList.remove('hige');
+                        setTimeout(function() {
+                            document.querySelector(".line-checklist").classList.add('wide');
+                            document.querySelector(".line-checklist").classList.add("hige");
+                        }, 100);
+                        document.querySelector(".navbarMP").style.display = "none";
+                        document.querySelector(".navbarMP").style.transform = "translateX(100vw)";
+                        document.querySelector(".navbarMP").querySelector(".navbar .dark-mode").style.transform = "translateX(100vw)";
+                        document.body.style.overflow = "hidden";
+                    }
+                })
             } else if (mutation.type === "childList" && mutation.target.classList.contains("hamburger-menu")) {
                 let clickCount = 0;
                 let clickTimeout;
@@ -76,33 +111,35 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (clickCount === 1) {
                             // Aksi yang ingin Anda lakukan saat elemen diklik sekali
                             if (!headerNavbar.querySelector(".navbarMP")){
-                                divElements[4].classList.add("navbarMP");
-                                document.querySelector(".header-navbar").appendChild(divElements[4]);
-                                divElements[4].appendChild(headerMenu.querySelector(".logo-wrap").cloneNode(true));
-                                divElements[4].appendChild(headerMenu.querySelector(".navbar").cloneNode(true));
-                                divElements[4].querySelector(".logo-wrap").appendChild(headerMenu.querySelector(".hamburger-menu").cloneNode(true));
-                                divElements[4].querySelector(".hamburger-menu").classList.add("hamburger-menu-close");
-                                divElements[4].querySelector(".hamburger-menu").classList.remove("hamburger-menu");
+                                const navbarMP = document.createElement("div"); // menu navbar Mobile
+                                navbarMP.classList.add("navbarMP")
+                                document.querySelector(".header-navbar").appendChild(navbarMP);
+                                navbarMP.appendChild(headerMenu.querySelector(".logo-wrap").cloneNode(true));
+                                navbarMP.appendChild(headerMenu.querySelector(".navbar").cloneNode(true));
+                                navbarMP.querySelector(".logo-wrap").appendChild(headerMenu.querySelector(".hamburger-menu").cloneNode(true));
+                                navbarMP.querySelector(".hamburger-menu").classList.add("hamburger-menu-close");
+                                navbarMP.querySelector(".hamburger-menu").classList.remove("hamburger-menu");
 
-                                divElements[4].querySelector(".navbar .menu-bar ul ").appendChild(headerMenu.querySelector("nav.navbar .dark-mode .dark-mode-wrap .btn-mode").cloneNode(true));
-                                divElements[4].querySelectorAll(".navbar .btn-mode")[0].classList.add("menu-settings");
-                                divElements[4].querySelectorAll(".navbar .btn-mode")[0].classList.remove("btn-mode");
-                                divElements[4].querySelectorAll(".menu-settings button")[0].appendChild(divElements[5]);
-                                divElements[4].querySelectorAll(".menu-settings button")[0].id = "menuSetting";
-                                divElements[4].querySelectorAll(".menu-settings button span")[0].textContent = "Pengaturan";
-                                divElements[4].querySelectorAll(".menu-settings button i")[0].textContent = "settings";
+                                navbarMP.querySelector(".navbar .menu-bar ul ").appendChild(headerMenu.querySelector("nav.navbar .dark-mode .dark-mode-wrap .btn-mode").cloneNode(true));
+                                navbarMP.querySelectorAll(".navbar .btn-mode")[0].classList.add("menu-settings");
+                                navbarMP.querySelectorAll(".navbar .btn-mode")[0].classList.remove("btn-mode");
+                                navbarMP.querySelectorAll(".navbar .menu-settings .theme-mode")[0].classList.remove("theme-mode");
+                                navbarMP.querySelectorAll(".menu-settings button")[0].appendChild(divElements[4]);
+                                navbarMP.querySelectorAll(".menu-settings button")[0].id = "menuSetting";
+                                navbarMP.querySelectorAll(".menu-settings button span")[0].textContent = "Pengaturan";
+                                navbarMP.querySelectorAll(".menu-settings button i")[0].textContent = "settings";
 
-                                divElements[4].style.position = "fixed";
-                                divElements[4].style.top = "0";
-                                divElements[4].style.right = "0";
-                                divElements[4].style.bottom = "0";
-                                divElements[4].style.left = "0";
-                                divElements[4].style.zIndex = "999";
-                            } else {
-                                divElements[4].style.display = "block";
+                                navbarMP.style.position = "fixed";
+                                navbarMP.style.top = "0";
+                                navbarMP.style.right = "0";
+                                navbarMP.style.bottom = "0";
+                                navbarMP.style.left = "0";
+                                navbarMP.style.zIndex = "999";
+                            } else if (headerNavbar.querySelector(".navbarMP")) {
+                                document.querySelector(".navbarMP").style.display = "block";
                             }
                             await delayMenu();
-                            divElements[4].style.transform = "translateX(0vw)";
+                            document.querySelector(".navbarMP").style.transform = "translateX(0vw)";
                             await delayBody();
                             document.body.style.overflow = "hidden";
                             
@@ -116,16 +153,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     clearTimeout(clickTimeout);
                     clickCount = 0;
                 });
-            } 
-            else if (mutation.type === "childList" && mutation.target.id === "menuSetting") {
+            } else if (mutation.type === "childList" && mutation.target.id === "menuSetting") {
                 document.getElementById("menuSetting").addEventListener('click', function() {
-                    if (divElements[4].querySelector(".navbar .dark-mode").style.transform === "translateX(-33vw)") {
-                        divElements[4].querySelector(".navbar .dark-mode").style.transform = "translateX(100vw)";
+                    if (document.querySelector(".navbarMP").querySelector(".navbar .dark-mode").style.transform === "translateX(-33vw)") {
+                        document.querySelector(".navbarMP").querySelector(".navbar .dark-mode").style.transform = "translateX(100vw)";
                     } else {
-                        divElements[4].querySelector(".navbar .dark-mode").style.transform = "translateX(-33vw)";
+                        document.querySelector(".navbarMP").querySelector(".navbar .dark-mode").style.transform = "translateX(-33vw)";
                     }
                 });
             }
+
         });
     });
 
@@ -140,6 +177,44 @@ document.addEventListener("DOMContentLoaded", function () {
             header.style.height = bodyHeight + 'px';
         });
     }
+
+    //Dark Mode 
+    document.querySelector(".theme-mode").addEventListener("click", function () {
+        if (document.querySelector(".theme-mode .material-icons").innerText.trim() === "dark_mode") {
+            document.querySelector(".theme-mode .material-icons").textContent = "light_mode";
+            document.querySelector(".theme-mode").style.boxShadow = "0 0 20px #ececec";
+            document.querySelector("main.main-content").style.backgroundColor = "#232323";
+            document.querySelector("main.main-content").style.boxShadow = "0 -10px 30px 20px #232323";
+            document.querySelector(".pop-up-theme").style.display = "flex";
+            document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Dark.";
+            document.querySelector('.line-checklist').classList.remove('wide');
+            document.querySelector('.line-checklist').classList.remove('hige');
+            setTimeout(function() {
+                document.querySelector(".line-checklist").classList.add('wide');
+                document.querySelector(".line-checklist").classList.add("hige");
+            }, 100);
+            document.body.style.overflow = "hidden";
+        } else {
+            document.querySelector(".theme-mode .material-icons").textContent = "dark_mode";
+            document.querySelector(".theme-mode").style.boxShadow = "0 0 10px #232323";
+            document.querySelector("main.main-content").style.backgroundColor = "#ececec";
+            document.querySelector("main.main-content").style.boxShadow = "0 -10px 30px 20px #ececec";
+            document.querySelector(".pop-up-theme").style.display = "flex";
+            document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Light.";
+            document.querySelector('.line-checklist').classList.remove('wide');
+            document.querySelector('.line-checklist').classList.remove('hige');
+            setTimeout(function() {
+                document.querySelector(".line-checklist").classList.add('wide');
+                document.querySelector(".line-checklist").classList.add("hige");
+            }, 100);
+            document.body.style.overflow = "hidden";
+        }
+    });
+    document.querySelector(".pop-up-ok").addEventListener("click", function () {
+        console.log("halo");
+        document.querySelector(".pop-up-theme").style.display = "none";
+        document.body.style.overflow = "visible";
+    });
     // MAIN SCRIPT
     // =================== // SCROLL TEXT SCRIPT // =================== //
     let displayText = document.getElementById('display-text');

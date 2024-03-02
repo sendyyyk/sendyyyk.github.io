@@ -189,6 +189,7 @@
     #header {
         width: 100%;
         height: 100vh;
+        
         div.header-hero {
             .hero-primary-item {
                 .hero-title-center {
@@ -356,6 +357,41 @@
     }
 
     .header-content {
+        div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 600px;
+                    height: 400px;
+                    border-radius: 17px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 17px;
+                                }
+                                &::after {
+                                    width: 17px;
+                                }
+                            }
+                        }
+                    }
+
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 1.4rem;
+                            }
+                        }
+                    }
+
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+        }
         div.header-hero {
             .hero-primary-item {
                 .hero-title-center {
@@ -386,6 +422,39 @@
     .header-content {
         div.header-navbar {
             margin-top: 0;
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 500px;
+                    height: 300px;
+                    border-radius: 15px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 15px;
+                                }
+                                &::after {
+                                    width: 15px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 margin: 0 auto;
                 padding: 0 25px;
@@ -510,6 +579,42 @@
     // HEADER CONTENT
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 400px;
+                    height: 250px;
+                    border-radius: 13px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                margin-right: 35%;
+                                width: 25%;
+                                &::before {
+                                    height: 10px;
+                                }
+                                &::after {
+                                    width: 10px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            height: 75%;
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 .logo-wrap {
                     height: 70px;
@@ -629,6 +734,41 @@
 
 @media screen and (max-width: 445px) {
     .header-content {
+        div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 300px;
+                    height: 200px;
+                    border-radius: 10px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 9px;
+                                }
+                                &::after {
+                                    width: 9px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.7rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.7rem;
+                        }
+                    }
+                }
+            }
+        }
         div.header-hero {
             .hero-primary-item {
                 .hero-title-center {
@@ -716,7 +856,43 @@
 }
 
 @media screen and (max-width: 350px) {
-    .header-content {   
+    .header-content {
+        //HEADER
+        div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 250px;
+                    height: 170px;
+                    border-radius: 10px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 8px;
+                                }
+                                &::after {
+                                    width: 8px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.6rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.6rem;
+                        }
+                    }
+                }
+            }
+        }   
         div.header-hero {
             .hero-primary-item {
                 .hero-title-center {
@@ -817,6 +993,39 @@
 @media screen and (max-width: 297px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 210px;
+                    height: 130px;
+                    border-radius: 6px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 6px;
+                                }
+                                &::after {
+                                    width: 6px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.5rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.5rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 height: 70px;
                 padding: 0 10px;
@@ -885,6 +1094,39 @@
 @media screen and (max-width: 220px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 160px;
+                    height: 100px;
+                    border-radius: 5px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 5px;
+                                }
+                                &::after {
+                                    width: 5px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.38rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.38rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 height: 70px;
                 .logo-wrap {
@@ -1008,6 +1250,39 @@
 @media screen and (max-width: 170px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 130px;
+                    height: 80px;
+                    border-radius: 4px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 4px;
+                                }
+                                &::after {
+                                    width: 4px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.3rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.3rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 height: 50px;
                 .logo-wrap {
@@ -1093,6 +1368,39 @@
 @media screen and (max-width: 140px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 100px;
+                    height: 60px;
+                    border-radius: 3px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 3px;
+                                }
+                                &::after {
+                                    width: 3px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.24rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.24rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 .logo-wrap {
                     height: 18px;
@@ -1207,6 +1515,39 @@
 @media screen and (max-width: 110px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 80px;
+                    height: 50px;
+                    border-radius: 2px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 2px;
+                                }
+                                &::after {
+                                    width: 2px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.19rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.1.9rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 height: 40px;
                 .logo-wrap {
@@ -1334,6 +1675,39 @@
 @media screen and (max-width: 90px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 60px;
+                    height: 40px;
+                    border-radius: 1px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 1px;
+                                }
+                                &::after {
+                                    width: 1px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.14rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.14rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 height: 30px;
                 .logo-wrap {
@@ -1464,6 +1838,39 @@
 @media screen and (max-width: 70px) {
     .header-content {
         div.header-navbar {
+            div.pop-up-theme {
+                .box-pop-up {
+                    width: 50px;
+                    height: 30px;
+                    border-radius: 1px;
+                    .checklist {
+                        .box-checklist {
+                            .line-checklist {
+                                &::before {
+                                    height: 1px;
+                                }
+                                &::after {
+                                    width: 1px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .caption-pop-up {
+                        .text-caption {
+                            span {
+                                font-size: 0.12rem;
+                            }
+                        }
+                    }
+    
+                    .btn-pop-up {
+                        .pop-up-ok {
+                            font-size: 0.12rem;
+                        }
+                    }
+                }
+            }
             .header-menu {
                 padding: 0 5px;
                 height: 20px;

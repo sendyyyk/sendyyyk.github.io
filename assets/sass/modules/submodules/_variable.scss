@@ -1,7 +1,7 @@
 //Variables 
 $primaryColor :  #ececec;
-$secondaryColor : rgb(35, 35, 35);
-$typicalColor : rgb(128, 98, 0);
+$secondaryColor : #232323;
+$typicalColor : #806200;
 
 //Fonts
 $arialFont: 'arial', sans-serif;
@@ -64,5 +64,23 @@ $alexBrushFont : 'Alex Brush', sans-serif;
     }
     100% {
         // transform: translateX(-1px);
+    }
+}
+
+@keyframes checklisBeforeAnimation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes checklisAfterAnimation {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
     }
 }

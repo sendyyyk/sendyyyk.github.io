@@ -4,9 +4,10 @@
 
 
 main.main-content {
-    background-color: rgb(255, 255, 255);
+    background-color: var.$primaryColor;
     box-shadow: 0 -10px 30px 20px var.$primaryColor;
     overflow-x: auto;
+    transition: all 0.5s;
     .main-container {
         @include mix.flexBox($dir : column);
         height: 2000px;
