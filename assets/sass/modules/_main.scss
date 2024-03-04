@@ -17,7 +17,9 @@ main.main-content {
             position: relative;
             max-height: 150px;
             width: 100%;
-            background-color: rgb(0, 0, 0);
+            margin-bottom:  15%;
+            border-bottom: 2px solid black;
+            background-color: var.$secondaryColor;
             .time-digital-content {
                 @include mix.flexBox($align: center, $justify: center);
                 position: absolute;
@@ -31,7 +33,7 @@ main.main-content {
                         font-size: 60px;
                         font-weight: 900;
                         font-family: var.$digital7Font;
-                        color: red;
+                        color: var.$primaryColor;
                     }
                 }
             }
@@ -48,7 +50,7 @@ main.main-content {
                         font-size: 60px;
                         font-weight: 900;
                         font-family: var.$digital7Font;
-                        color: red;
+                        color: var.$primaryColor;
                     }
                 }
             }
@@ -77,11 +79,100 @@ main.main-content {
                                 font-size: 50px;
                                 font-weight: 900;
                                 font-family: var.$digital7Font;
-                                color: red;
+                                color: var.$primaryColor;
                             }
                         }
                     }
                     
+                }
+            }
+        }
+        .main-slide-show {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            background-color: burlywood;
+            z-index: 110;
+            .slide-show-content {
+                height: 87%;
+                border: 3px solid var.$secondaryColor;
+                img {
+                    width: 100%;
+                }
+            }
+            .btn-slide-show {
+                @include mix.flexBox($align: flex-end, $justify: center);
+                height: 13%;
+                background-color: coral;
+                .btn-primary-item {
+                    @include mix.flexBox($align: center, $justify: center);
+                    height: 50%;
+                    width: 40%;
+                    background-color: aqua;
+                    .btn-prev-item {
+                        height: 100%;
+                        width: 10%;
+                        background-color: aquamarine;
+                        .prev-btn {
+                            display: none;
+                            cursor: pointer;
+                            border: none;
+                            width: 100%;
+                            height: 100%;
+                            // i {
+                            //     font-size: 150%;
+                            //     font-weight: 900;
+                            // }
+                        }
+                    }
+                    .btn-dot-item {
+                        @include mix.flexBox($align: center, $justify: center);
+                        height: 100%;
+                        width: 80%;
+                        background-color: blueviolet;
+                        ul {
+                            @include mix.flexBox($justify: center);
+                            background-color: crimson;
+                            width: 100%;
+                            height: 50%;
+                            li {
+                                display: flex;
+                                margin: auto 2%;
+                                width: 5%;
+                                height: 100%;
+                                background-color: cadetblue;
+                                .point-btn {
+                                    display: none;
+                                    width: 100%;  
+                                    height: 100%;
+                                    cursor: pointer;
+                                    background-color: rgb(212, 0, 255);
+                                    // height: 10px;
+                                    font-size: 0;
+                                    // border-radius: 100%;
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                    .btn-next-item {
+                        height: 100%;
+                        width: 10%;
+                        background-color: rgb(39, 172, 21);
+                        .next-btn {
+                            display: none;
+                            background-color: blueviolet;
+                            cursor: pointer;
+                            width: 100%;
+                            height: 100%;
+                            border: none;
+                            i { 
+                                font-size: 20px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
                 }
             }
         }

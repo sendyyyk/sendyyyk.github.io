@@ -290,6 +290,9 @@
     height: 300px;
     border-radius: 15px;
   }
+  .header-content div.header-navbar div.pop-up-theme .box-pop-up .checklist .box-checklist .line-checklist {
+    margin-right: 32%;
+  }
   .header-content div.header-navbar div.pop-up-theme .box-pop-up .checklist .box-checklist .line-checklist::before {
     height: 15px;
   }
@@ -1948,7 +1951,9 @@ main.main-content .main-container .main-scroll-time-date {
   position: relative;
   max-height: 150px;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  margin-bottom: 15%;
+  border-bottom: 2px solid black;
+  background-color: #232323;
 }
 main.main-content .main-container .main-scroll-time-date .time-digital-content {
   display: flex;
@@ -1971,7 +1976,7 @@ main.main-content .main-container .main-scroll-time-date .time-digital-content .
   font-size: 60px;
   font-weight: 900;
   font-family: "digital-7", sans-serif;
-  color: red;
+  color: #ececec;
 }
 main.main-content .main-container .main-scroll-time-date .date-digital-content {
   display: flex;
@@ -1994,7 +1999,7 @@ main.main-content .main-container .main-scroll-time-date .date-digital-content .
   font-size: 60px;
   font-weight: 900;
   font-family: "digital-7", sans-serif;
-  color: red;
+  color: #ececec;
 }
 main.main-content .main-container .main-scroll-time-date .scroll-text-content {
   display: flex;
@@ -2034,7 +2039,102 @@ main.main-content .main-container .main-scroll-time-date .scroll-text-content .s
   font-size: 50px;
   font-weight: 900;
   font-family: "digital-7", sans-serif;
-  color: red;
+  color: #ececec;
+}
+main.main-content .main-container .main-slide-show {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  background-color: burlywood;
+  z-index: 110;
+}
+main.main-content .main-container .main-slide-show .slide-show-content {
+  height: 87%;
+  border: 3px solid #232323;
+}
+main.main-content .main-container .main-slide-show .slide-show-content img {
+  width: 100%;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  height: 13%;
+  background-color: coral;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 50%;
+  width: 40%;
+  background-color: aqua;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-prev-item {
+  height: 100%;
+  width: 10%;
+  background-color: aquamarine;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-prev-item .prev-btn {
+  display: none;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-dot-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 100%;
+  width: 80%;
+  background-color: blueviolet;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-dot-item ul {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: row;
+  background-color: crimson;
+  width: 100%;
+  height: 50%;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-dot-item ul li {
+  display: flex;
+  margin: auto 2%;
+  width: 5%;
+  height: 100%;
+  background-color: cadetblue;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-dot-item ul li .point-btn {
+  display: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: rgb(212, 0, 255);
+  font-size: 0;
+  border: none;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-next-item {
+  height: 100%;
+  width: 10%;
+  background-color: rgb(39, 172, 21);
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-next-item .next-btn {
+  display: none;
+  background-color: blueviolet;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+main.main-content .main-container .main-slide-show .btn-slide-show .btn-primary-item .btn-next-item .next-btn i {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 body {
