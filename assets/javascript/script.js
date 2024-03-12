@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("load", mobileView);
     window.addEventListener("resize", mobileView);
     
+    
+
     const observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             async function delayMenu() {
@@ -74,6 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Dark.";
                         document.querySelector('.line-checklist').classList.remove('wide');
                         document.querySelector('.line-checklist').classList.remove('hige');
+                        document.querySelector(".main-scroll-time-date").style.backgroundColor = "#232323";
+                        document.querySelectorAll(".main-scroll-time-date section h1").forEach(function (digital) {
+                            digital.style.color = "#ececec";
+                        })
                         setTimeout(function() {
                             document.querySelector(".line-checklist").classList.add('wide');
                             document.querySelector(".line-checklist").classList.add("hige");
@@ -91,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Light.";
                         document.querySelector('.line-checklist').classList.remove('wide');
                         document.querySelector('.line-checklist').classList.remove('hige');
+                        document.querySelector(".main-scroll-time-date").style.backgroundColor = "#ececec";
+                        document.querySelectorAll(".main-scroll-time-date section h1").forEach(function (digital) {
+                            digital.style.color = "#232323";
+                        })
                         setTimeout(function() {
                             document.querySelector(".line-checklist").classList.add('wide');
                             document.querySelector(".line-checklist").classList.add("hige");
@@ -178,6 +188,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    window.addEventListener('scroll', function() {
+        if ( window.scrollY >= document.getElementById("header").offsetHeight) {
+            if (window.getComputedStyle(document.querySelector(".main-content")).backgroundColor === "rgb(236, 236, 236)") {
+                // document.querySelectorAll("#header .header-menu a, .navbar .dark-mode i").forEach(function (change) {
+                //     change.style.color = "#232323"; 
+                // });
+                document.querySelector(".header-menu").style.backgroundColor = "#232323cc";
+            }
+        } else {
+            document.querySelector(".header-menu").style.backgroundColor = "transparent";
+        }
+    });
+
     //Dark Mode 
     document.querySelector(".theme-mode").addEventListener("click", function () {
         if (document.querySelector(".theme-mode .material-icons").innerText.trim() === "dark_mode") {
@@ -187,8 +210,12 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("main.main-content").style.boxShadow = "0 -10px 30px 20px #232323";
             document.querySelector(".pop-up-theme").style.display = "flex";
             document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Dark.";
-            document.querySelector('.line-checklist').classList.remove('wide');
-            document.querySelector('.line-checklist').classList.remove('hige');
+            document.querySelector(".line-checklist").classList.remove('wide');
+            document.querySelector(".line-checklist").classList.remove('hige');
+            document.querySelector(".main-scroll-time-date").style.backgroundColor = "#232323";
+            document.querySelectorAll(".main-scroll-time-date section h1").forEach(function (digital) {
+                digital.style.color = "#ececec";
+            })
             setTimeout(function() {
                 document.querySelector(".line-checklist").classList.add('wide');
                 document.querySelector(".line-checklist").classList.add("hige");
@@ -203,6 +230,10 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector(".pop-up-theme .caption-pop-up .text-caption span").textContent = "Tema Website Sukses Dirubah Menjadi Light.";
             document.querySelector('.line-checklist').classList.remove('wide');
             document.querySelector('.line-checklist').classList.remove('hige');
+            document.querySelector(".main-scroll-time-date").style.backgroundColor = "#ececec";
+            document.querySelectorAll(".main-scroll-time-date section h1").forEach(function (digital) {
+                digital.style.color = "#232323";
+            })
             setTimeout(function() {
                 document.querySelector(".line-checklist").classList.add('wide');
                 document.querySelector(".line-checklist").classList.add("hige");
@@ -211,7 +242,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     document.querySelector(".pop-up-ok").addEventListener("click", function () {
-        console.log("halo");
         document.querySelector(".pop-up-theme").style.display = "none";
         document.body.style.overflow = "visible";
     });
@@ -245,12 +275,166 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTime();
     
     // =================== // DATE DIGITAL SCRIPT // =================== //
-
+    
     var currentDate = new Date();
 
-        var tanggal = currentDate.getDate();
-        var bulan = currentDate.getMonth() + 1;
-        var tahun = currentDate.getFullYear();
+    var tanggal = currentDate.getDate();
+    var bulan = currentDate.getMonth() + 1;
+    var tahun = currentDate.getFullYear();
+    
+    document.getElementById('display-date').textContent = tanggal + '-' + bulan + '-' + tahun;
+    
+    
+    // =================== // SLIDE SHOW SCRIPT // =================== //
+    
+    let totalSlide = document.querySelectorAll(".display-slide-show ul li");
+    document.querySelector(".display-slide-show ul").style.transform = "translateX(" + -100 / totalSlide.length + "%)";
 
-        document.getElementById('display-date').textContent = tanggal + '-' + bulan + '-' + tahun;
+    let transformSlide = parseFloat(document.getElementById("slideTransform").style.transform.match(/translateX\(([-\d.]+%)\)/)[1]);
+    let initialSlide = transformSlide;
+
+    let dotSlideList = document.querySelectorAll(".btn-primary-item .btn-dot-item ul li");
+    let dotSlide = 0;
+    dotSlideList[dotSlide].style.backgroundColor = "#806200";
+
+    let clickCount = 0;
+    let clickTimeout;
+
+    totalSlide = totalSlide.length * 100;
+    let ulSlide = document.querySelector(".display-slide-show ul");
+    ulSlide.style.width = totalSlide + "%" ;
+
+    let isIntervalRunning = false;
+    setInterval(function () {
+        setTimeout(function () {
+            isIntervalRunning = true;
+        },5000)
+        if (isIntervalRunning) {
+            let nextSlideBtn = document.getElementById("nextSlideBtn");
+            nextSlideBtn.dispatchEvent(new Event('click'));
+        }
+    }, 3000);
+
+    document.getElementById("nextSlideBtn").addEventListener('click', function () {
+        clickCount++;
+        clearTimeout(clickTimeout);
+
+        isIntervalRunning = false;
+
+        function dotSlideFunc() {
+            dotSlideList[dotSlide].style.backgroundColor = "#232323";
+            dotSlide++;
+            if (dotSlide < dotSlideList.length) {
+                dotSlideList[dotSlide].style.backgroundColor = "#806200";
+            } else {
+                dotSlide = 0;
+                dotSlideList[dotSlide].style.backgroundColor = "#806200";
+            }
+        }
+
+        function slideTransform() {
+            let totalTransformValue = -100 - initialSlide * 2;
+            
+            if (Math.ceil(transformSlide) == Math.ceil(totalTransformValue)) {
+                transformSlide += initialSlide;  
+                document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+                document.querySelector(".display-slide-show ul").style.transition = "transform 180ms ease";
+                setTimeout(function() {
+                    transformSlide = initialSlide;
+                    document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+                    document.querySelector(".display-slide-show ul").style.transition = "transform 0s ease";
+                }, 150);
+            } else if (transformSlide < 0) {
+                transformSlide = transformSlide + initialSlide;
+                document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+                document.querySelector(".display-slide-show ul").style.transition = "transform 180ms ease";
+            }
+        }
+
+        clickTimeout = setTimeout( async() => {
+            if (clickCount == 1) {
+                slideTransform();
+                dotSlideFunc();
+            }
+            clickCount = 0;
+        }, 180);
+
+        if (clickCount > 1) {
+            if (clickCount == 2) {
+                clickTimeout = setTimeout( async() => {
+                    slideTransform();
+                    dotSlideFunc();
+                }, 200);
+            }
+            clickCount = 0;
+        }
+    });
+
+    document.getElementById("prevSlideBtn").addEventListener('click', function () {
+        clickCount++;
+        clearTimeout(clickTimeout);
+
+        isIntervalRunning = false;
+
+        function dotSlideFunc() {
+            dotSlideList[dotSlide].style.backgroundColor = "#232323";
+            dotSlide--;
+            if (dotSlide == -1) {
+                dotSlide = dotSlideList.length - 1;
+                dotSlideList[dotSlide].style.backgroundColor = "#806200";
+            } else if (dotSlide < dotSlideList.length) {
+                dotSlideList[dotSlide].style.backgroundColor = "#806200";
+            } 
+        }
+        function slideTransform() {
+            let totalTransformValue = -100 - initialSlide * 2;
+            if (Math.ceil(transformSlide) == Math.ceil(initialSlide)) {
+                transformSlide = transformSlide - initialSlide;
+                document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+                document.querySelector(".display-slide-show ul").style.transition = "transform 180ms ease";
+                setTimeout(function() {
+                    transformSlide = totalTransformValue;
+                    document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+                    document.querySelector(".display-slide-show ul").style.transition = "transform 0s ease";
+                }, 150);
+            } else if (Math.ceil(totalTransformValue) <= Math.ceil(transformSlide)) {
+                transformSlide = transformSlide - initialSlide;
+                document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+                document.querySelector(".display-slide-show ul").style.transition = "transform 180ms ease";
+            }
+        }
+
+        clickTimeout = setTimeout( async() => {
+            if (clickCount == 1) {
+                slideTransform();
+                dotSlideFunc();
+            }
+            clickCount = 0;
+        }, 180);
+
+        if (clickCount > 1) {
+            if (clickCount == 2) {
+                clickTimeout = setTimeout( async() => {
+                    slideTransform();
+                    dotSlideFunc();
+                }, 200);
+            }
+            clickCount = 0;
+        }
+    });
+
+    
+    document.querySelectorAll(".point-btn").forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            isIntervalRunning = false;
+
+            dotSlideList[dotSlide].style.backgroundColor = "#232323";
+            dotSlide = index;
+            
+            dotSlideList[this.textContent - 1].style.backgroundColor = "#806200";
+            transformSlide = initialSlide * this.textContent;
+            document.querySelector(".display-slide-show ul").style.transform = "translateX(" + transformSlide + "%)";
+            document.querySelector(".display-slide-show ul").style.transition = "transform 180ms ease";
+        });
+    });    
 });
