@@ -154,7 +154,7 @@ const SlideShowMobile = () => {
     };
 
     return (
-        <div className="relative flex w-full" style={{height: "80vw"}}>
+        <div className="relative flex w-full" style={{ height: "80vw" }}>
             <div className="flex flex-col w-full h-full ms-auto z-10">
                 <div className="relative flex w-screen h-3/4 ms-auto overflow-hidden before:content-[''] before:absolute before:z-10 before:bottom-0 before:left-0 before:bg-secondary before:duration-500 before:w-full before:shadow-2vwWhite xdrk-bxs1-css before:ms-min0/7vw ">
                     <div className="w-full h-full bg-black overflow-x-hidden">
@@ -162,7 +162,7 @@ const SlideShowMobile = () => {
                             {slides.length === 0 ? (
                                 <li className="w-full h-full">
                                     <a href="/" className="relative text-white flex flex-col gap-y-3vw items-center justify-center w-full h-full hover:before:block before:content-[''] before:absolute before:top-0 before:hidden before:w-full before:h-full before:bg-transpBlack before:z-10">
-                                        <FileNotFound width="10vw" height="10vw"/>
+                                        <FileNotFound width="10vw" height="10vw" />
                                         <span className="text-white text-5vw">No Items to Display</span>
                                     </a>
                                 </li>
