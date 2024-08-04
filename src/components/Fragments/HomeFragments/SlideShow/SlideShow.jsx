@@ -53,7 +53,6 @@ const SlideShow = () => {
             setVideoDuration(5000);
         }
 
-        // Pause all videos when the slide changes
         videoRefs.current.forEach((videoElement, index) => {
             if (index !== activeSlideIndex) {
                 videoElement.pause();
