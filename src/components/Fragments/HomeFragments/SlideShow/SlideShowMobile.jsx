@@ -134,7 +134,7 @@ const SlideShowMobile = () => {
     const slideButtons = slides.map((_, index) => (
         <SlideShowBtn
             key={index}
-            styleBtn="w-3vw h-3vw mx-0/5vw"
+            styleBtn="w-3vw h-3vw mr-1vw"
             isActive={activeSlideIndex === index + 1}
             onClick={() => updateSlide(index + 1)}
         />
