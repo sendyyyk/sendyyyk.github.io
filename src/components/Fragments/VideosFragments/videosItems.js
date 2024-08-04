@@ -6,7 +6,7 @@ const videosItems = [
     "videoTitle": "Wind",
     "description": "Lupa",
     "poster": [
-      "wind-akeboshi.png"  
+      "wind-akeboshi.png"
     ],
     "date": "2 August 2024",
     "popular": true,
