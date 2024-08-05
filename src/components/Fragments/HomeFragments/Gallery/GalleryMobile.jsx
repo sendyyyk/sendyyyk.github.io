@@ -10,6 +10,7 @@ const GalleryMobile = (props) => {
     const [translateX, setTranslateX] = useState(0);
     const [disablePrev, setDisablePrev] = useState(true);
     const [disableNext, setDisableNext] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(2);
 
     const additionalGallery = galleryItems.filter(item => item.popular).map(gallery => ({
         ...gallery,
@@ -39,6 +40,7 @@ const GalleryMobile = (props) => {
     useEffect(() => {
         setDisablePrev(translateX >= minTranslateX);
         setDisableNext(translateX <= maxTranslateX);
+        setCurrentIndex(Math.abs(translateX / 40) + 2);
     }, [translateX, minTranslateX, maxTranslateX]);
 
     const transformStyle = { transform: `translateX(${translateX}vw)` };
@@ -51,8 +53,11 @@ const GalleryMobile = (props) => {
                 <div className=" flex w-full h-7vw mb-10vw backdrop-blur-0/2vw">
                     <span className="mx-auto payfair-font text-black text-10vw leading-0 xdrk-c1-css">Gallery</span>
                 </div>
+                <div className='absolute right-0 mt-7vw flex justify-center items-center w-15vw h-7vw ms-auto mb-4vw rounded-full bg-grey xdrk-bc3-css font-semibold text-3vw text-white xdrk-c2-css'>
+                    {currentIndex}/{additionalGallery.length}
+                </div>
                 <div className="relative flex w-full h-60vw px-5vw">
-                    <Button styleBtn="absolute top-15vw left-0 flex w-10vw h-10vw rounded-full bg-primary duration-300 shadow-0/4vwBlack cursor-pointer hover:opacity-80 z-10" onclick={handlePrevClick} disabled={disablePrev}>
+                    <Button styleBtn="prev absolute top-15vw left-0 flex w-10vw h-10vw rounded-full bg-primary duration-300 shadow-0/4vwBlack cursor-pointer z-10" onclick={handlePrevClick} disabled={disablePrev}>
                         <Arrow styleSvg="my-auto mx-auto" width="45%" height="45%" />
                     </Button>
                     <div className="flex flex-col h-full w-full mb-auto gap-y-2vw overflow-hidden">
@@ -109,7 +114,7 @@ const GalleryMobile = (props) => {
                             ))}
                         </ul>
                     </div>
-                    <Button styleBtn="absolute top-15vw right-0 flex w-10vw h-10vw rounded-full bg-primary shadow-0/4vwBlack cursor-pointer duration-300 hover:opacity-80 z-10" onclick={handleNextClick} disabled={disableNext}>
+                    <Button styleBtn="next absolute top-15vw right-0 flex w-10vw h-10vw rounded-full bg-primary shadow-0/4vwBlack cursor-pointer duration-300 z-10" onclick={handleNextClick} disabled={disableNext}>
                         <Arrow styleSvg="my-auto mx-auto rotate-180" width="45%" height="45%" />
                     </Button>
                 </div>

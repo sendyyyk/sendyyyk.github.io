@@ -27,6 +27,9 @@ const VideoMobile = (props) => {
     return (
         <div className={"flex w-full rounded-3vw"} {...swipeHandlers}>
             <div className="relative flex flex-col w-full max-h-80vw rounded-3vw">
+                <div className='flex justify-center items-center w-15vw h-7vw ms-auto mb-4vw rounded-full bg-grey xdrk-bc3-css font-semibold text-3vw text-white xdrk-c2-css'>
+                    {currentIndex + 1}/{filteredVideosItems.length}
+                </div>
                 <div className="flex flex-col w-full h-70vw gap-y-2/5vw overflow-hidden rounded-3vw">
                     <ul
                         className="flex justify-between w-full rounded-3vw transition-transform duration-300"

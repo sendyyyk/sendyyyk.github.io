@@ -14,15 +14,18 @@ const SlideShow = () => {
     const [transformValue, setTransformValue] = useState("-60vw");
     const [isManualClicking, setIsManualClicking] = useState(false);
     const [videoDuration, setVideoDuration] = useState(5000);
+    const [progressBarWidth, setProgressBarWidth] = useState("0%");
+    const [progressBarDuration, setProgressBarDuration] = useState(5000);
 
     const videoRefs = useRef([]);
+    const progressBarRef = useRef(null);
 
     const slides = [
         { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-1.png", type: "image" },
-        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-2.png", type: "image" },
         { href: "/", src: "img-vid/video/slide-show/slide-show-2.mp4", type: "video" },
-        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-3.png", type: "image" },
-        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-4.png", type: "image" },
+        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-2.png", type: "image" },
+        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-3.png", type: "image" },
+        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-4.png", type: "image" },
     ];
 
     const duplicatedSlides = [
@@ -46,11 +49,14 @@ const SlideShow = () => {
         if (currentSlide.type === "video") {
             const videoElement = videoRefs.current[activeSlideIndex];
             if (videoElement) {
-                setVideoDuration(videoElement.duration * 1000);
+                const duration = videoElement.duration * 1000;
+                setVideoDuration(duration);
+                setProgressBarDuration(duration);
                 videoElement.play();
             }
         } else {
             setVideoDuration(5000);
+            setProgressBarDuration(5000);
         }
 
         videoRefs.current.forEach((videoElement, index) => {
@@ -60,6 +66,27 @@ const SlideShow = () => {
             }
         });
     }, [activeSlideIndex]);
+
+    useEffect(() => {
+        const progressBar = progressBarRef.current;
+        if (progressBar) {
+            progressBar.style.transition = `width ${progressBarDuration}ms linear`;
+            setProgressBarWidth("100%");
+        }
+
+        const resetProgressBar = () => {
+            if (progressBar) {
+                progressBar.style.transition = "none";
+                setProgressBarWidth("0%");
+                setTimeout(() => {
+                    progressBar.style.transition = `width ${progressBarDuration}ms linear`;
+                    setProgressBarWidth("100%");
+                }, 50);
+            }
+        };
+
+        resetProgressBar();
+    }, [activeSlideIndex, progressBarDuration]);
 
     const updateSlide = (index) => {
         setTransitionValue("duration-300");
@@ -168,11 +195,15 @@ const SlideShow = () => {
                 </div>
                 <div className="flex w-full h-2vw mt-1/5vw">
                     <div className="loading-progress absolute top-0 right-0 flex w-full h-0/15vw z-10">
-                        <div className="loading-bar h-full bg-secondary ms-auto"></div>
+                        <div
+                            ref={progressBarRef}
+                            className="loading-bar h-full bg-secondary ms-auto"
+                            style={{ width: progressBarWidth }}
+                        ></div>
                     </div>
                     <div className="flex mx-auto gap-x-2/5vw">
                         <Button typeBtn="button" styleBtn="prev absolute top-1/3 left-44% flex justify-center items-center w-2vw h-2vw rounded-full overflow-hidden bg-primary duration-300 opacity-30 hover:opacity-100" onclick={throttledPrevClick}>
-                            <Arrow width="40%" height="40%"></Arrow>
+                            <Arrow width="40%" height="40%" />
                         </Button>
                         <div className="flex w-12vw mx-auto">
                             <ul className="absolute top-22vw left-12/5% flex justify-center gap-x-0/8vw my-auto">
@@ -180,7 +211,7 @@ const SlideShow = () => {
                             </ul>
                         </div>
                         <Button typeBtn="button" styleBtn="next absolute top-1/3 right-1% flex justify-center items-center w-2vw h-2vw rounded-full overflow-hidden bg-primary duration-300 opacity-30 hover:opacity-100" onclick={throttledNextClick}>
-                            <Arrow width="40%" height="40%" styleSvg="rotate-180"></Arrow>
+                            <Arrow width="40%" height="40%" styleSvg="rotate-180" />
                         </Button>
                     </div>
                 </div>

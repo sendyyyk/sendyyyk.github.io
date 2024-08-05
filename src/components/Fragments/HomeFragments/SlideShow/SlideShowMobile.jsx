@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useSwipeable } from "react-swipeable";
 import Button from "../../../Elements/Button/Button";
 import Arrow from "../../../Elements/Icon/Arrow";
 import SlideShowBtn from "./SlideShowBtn";
@@ -14,15 +15,18 @@ const SlideShowMobile = () => {
     const [transformValue, setTransformValue] = useState("-100vw");
     const [isManualClicking, setIsManualClicking] = useState(false);
     const [videoDuration, setVideoDuration] = useState(5000);
+    const [progressBarWidth, setProgressBarWidth] = useState("0%");
+    const [progressBarDuration, setProgressBarDuration] = useState(5000);
 
     const videoRefs = useRef([]);
+    const progressBarRef = useRef(null);
 
     const slides = [
         { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-1.png", type: "image" },
-        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-2.png", type: "image" },
         { href: "/", src: "img-vid/video/slide-show/slide-show-2.mp4", type: "video" },
-        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-3.png", type: "image" },
-        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-4.png", type: "image" },
+        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-2.png", type: "image" },
+        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-3.png", type: "image" },
+        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-4.png", type: "image" },
     ];
 
     const duplicatedSlides = [
@@ -46,11 +50,14 @@ const SlideShowMobile = () => {
         if (currentSlide.type === "video") {
             const videoElement = videoRefs.current[activeSlideIndex];
             if (videoElement) {
-                setVideoDuration(videoElement.duration * 1000);
+                const duration = videoElement.duration * 1000;
+                setVideoDuration(duration);
+                setProgressBarDuration(duration);
                 videoElement.play();
             }
         } else {
             setVideoDuration(5000);
+            setProgressBarDuration(5000);
         }
 
         videoRefs.current.forEach((videoElement, index) => {
@@ -60,6 +67,27 @@ const SlideShowMobile = () => {
             }
         });
     }, [activeSlideIndex]);
+
+    useEffect(() => {
+        const progressBar = progressBarRef.current;
+        if (progressBar) {
+            progressBar.style.transition = `width ${progressBarDuration}ms linear`;
+            setProgressBarWidth("100%");
+        }
+
+        const resetProgressBar = () => {
+            if (progressBar) {
+                progressBar.style.transition = "none";
+                setProgressBarWidth("0%");
+                setTimeout(() => {
+                    progressBar.style.transition = `width ${progressBarDuration}ms linear`;
+                    setProgressBarWidth("100%");
+                }, 50);
+            }
+        };
+
+        resetProgressBar();
+    }, [activeSlideIndex, progressBarDuration]);
 
     const updateSlide = (index) => {
         setTransitionValue("duration-300");
@@ -140,12 +168,19 @@ const SlideShowMobile = () => {
         />
     ));
 
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => throttledNextClick(),
+        onSwipedRight: () => throttledPrevClick(),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
     return (
-        <div className="relative flex w-full" style={{ height: "80vw" }}>
+        <div {...swipeHandlers} className="relative flex w-full" style={{ height: "80vw" }}>
             <div className="flex flex-col w-full h-full ms-auto z-10">
                 <div className="relative flex w-screen h-3/4 ms-auto overflow-hidden before:content-[''] before:absolute before:z-10 before:bottom-0 before:left-0 before:bg-secondary before:duration-500 before:w-full before:shadow-2vwWhite xdrk-bxs1-css before:ms-min0/7vw ">
                     <div className="w-full h-full bg-black overflow-x-hidden">
-                    <ul className={`flex h-full ${transitionValue}`} style={{ width: ulWidth, transform: `translateX(${transformValue})` }}>
+                        <ul className={`flex h-full ${transitionValue}`} style={{ width: ulWidth, transform: `translateX(${transformValue})` }}>
                             {duplicatedSlides.length === 0 ? (
                                 <li className="w-full h-full">
                                     <a href="/" className="relative text-white flex flex-col gap-y-1vw items-center justify-center w-full h-full hover:before:block before:content-[''] before:absolute before:top-0 before:hidden before:w-full before:h-full before:bg-transpBlack before:z-10">
@@ -169,10 +204,14 @@ const SlideShowMobile = () => {
                 </div>
                 <div className="flex w-full h-2vw mt-1/5vw">
                     <div className="loading-progress absolute top-0 right-0 flex w-full h-0/5vw z-10">
-                        <div className="loading-bar h-full bg-secondary ms-auto"></div>
+                        <div
+                            ref={progressBarRef}
+                            className="loading-bar h-full bg-secondary ms-auto"
+                            style={{ width: progressBarWidth }}
+                        ></div>
                     </div>
                     <div className="flex mx-auto gap-x-2/5vw">
-                        <Button typeBtn="button" styleBtn="absolute top-1/4 left-3% flex justify-center items-center w-10vw h-10vw rounded-full overflow-hidden bg-primary duration-300 opacity-50 hover:opacity-100" onclick={throttledPrevClick}>
+                        <Button typeBtn="button" styleBtn="absolute top-0 left-0 flex justify-center items-center w-10vw h-3/4 overflow-hidden duration-300" onclick={throttledPrevClick}>
                             <Arrow width="40%" height="40%"></Arrow>
                         </Button>
                         <div className="flex w-12vw mx-auto">
@@ -180,7 +219,7 @@ const SlideShowMobile = () => {
                                 {slideButtons}
                             </ul>
                         </div>
-                        <Button typeBtn="button" styleBtn="absolute top-1/4 right-3% flex justify-center items-center w-10vw h-10vw rounded-full overflow-hidden bg-primary duration-300 opacity-50 hover:opacity-100" onclick={throttledNextClick}>
+                        <Button typeBtn="button" styleBtn="absolute top-0 right-0 flex justify-center items-center w-10vw h-3/4 overflow-hidden duration-300" onclick={throttledNextClick}>
                             <Arrow width="40%" height="40%" styleSvg="rotate-180"></Arrow>
                         </Button>
                     </div>
@@ -188,6 +227,6 @@ const SlideShowMobile = () => {
             </div>
         </div>
     );
-}
+};
 
 export default SlideShowMobile;

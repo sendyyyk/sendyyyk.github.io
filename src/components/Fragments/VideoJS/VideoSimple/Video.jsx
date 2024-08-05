@@ -6,7 +6,7 @@ import 'video.js/dist/video-js.css';
 const VideoJSsimple = ({ src, Controls, poster, styleVideo, muted, loop, autoPlay }) => {
     const [player, setPlayer] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
-
+    
     const initializePlayer = useCallback((node) => {
         if (node) {
             const playerInstance = videojs(node, {
@@ -45,14 +45,14 @@ const VideoJSsimple = ({ src, Controls, poster, styleVideo, muted, loop, autoPla
         <Fragment>
             {!isMobile ? (
                 <div className='vjs-simple w-full h-full'>
-                    <div data-vjs-player className={styleVideo}>
-                        <video ref={initializePlayer} className="video-js"></video>
+                    <div data-vjs-player>
+                        <video ref={initializePlayer} className={`video-js ${styleVideo}`}></video>
                     </div>
                 </div>
             ) : (
                 <div className='vjs-simple-mobile w-full h-full'>
-                    <div data-vjs-player className={styleVideo}>
-                        <video ref={initializePlayer} className="video-js"></video>
+                    <div data-vjs-player>
+                        <video ref={initializePlayer} className={`video-js ${styleVideo}`}></video>
                     </div>
                 </div>
             )}

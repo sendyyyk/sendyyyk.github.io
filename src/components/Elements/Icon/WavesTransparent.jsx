@@ -22,7 +22,7 @@ const WavesTransparent = (props) => {
                     </defs>
                     <foreignObject x="0" y="0" width="1400" height="625" clipPath="url(#waveClipPath)">
                         <VideoJSsimple
-                            styleVideo="video-background"
+                            styleVideo="video-about-background"
                             src={`/img-vid/video/videos/${src}`}
                             poster={`/img-vid/image/poster-video/`}
                             muted
@@ -41,7 +41,7 @@ const WavesTransparent = (props) => {
                     </defs>
                     <foreignObject x="0" y="0" width="1400" height="1300" clipPath="url(#waveClipPath)">
                         <VideoJSsimple
-                            styleVideo="video-background"
+                            styleVideo="video-about-background"
                             src={`/img-vid/video/videos/${src}`}
                             poster={`/img-vid/image/poster-video/`}
                             muted

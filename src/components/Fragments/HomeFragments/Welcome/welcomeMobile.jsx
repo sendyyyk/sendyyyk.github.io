@@ -11,7 +11,7 @@ const WelcomeMobile = (props) => {
     };
 
     return (
-        <div className="flex w-full h-50vw" style={{marginTop: "55vw", height: "90vw"}}>
+        <div className="flex w-full h-50vw" style={{ marginTop: "55vw", height: "90vw" }}>
             <div className="flex flex-col w-full mt-15vw mb-auto">
                 <h1 className="text-10vw font-semibold cinzel-font text-black xdrk-c1-css">Selamat Datang</h1>
                 <span className="text-3/3vw font-light text-black xdrk-c1-css">Terima Kasih Sudah Mengunjungi Website Saya</span>
