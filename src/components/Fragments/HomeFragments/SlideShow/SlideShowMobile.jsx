@@ -15,18 +15,15 @@ const SlideShowMobile = () => {
     const [transformValue, setTransformValue] = useState("-100vw");
     const [isManualClicking, setIsManualClicking] = useState(false);
     const [videoDuration, setVideoDuration] = useState(5000);
-    const [progressBarWidth, setProgressBarWidth] = useState("0%");
-    const [progressBarDuration, setProgressBarDuration] = useState(5000);
 
     const videoRefs = useRef([]);
-    const progressBarRef = useRef(null);
 
     const slides = [
         { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-1.png", type: "image" },
+        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-2.png", type: "image" },
         { href: "/", src: "img-vid/video/slide-show/slide-show-2.mp4", type: "video" },
-        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-2.png", type: "image" },
-        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-3.png", type: "image" },
-        // { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-4.png", type: "image" },
+        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-3.png", type: "image" },
+        { href: "/gallery/IknQ3jgUwt", src: "img-vid/image/slide-show/slide-show-4.png", type: "image" },
     ];
 
     const duplicatedSlides = [
@@ -50,14 +47,11 @@ const SlideShowMobile = () => {
         if (currentSlide.type === "video") {
             const videoElement = videoRefs.current[activeSlideIndex];
             if (videoElement) {
-                const duration = videoElement.duration * 1000;
-                setVideoDuration(duration);
-                setProgressBarDuration(duration);
+                setVideoDuration(videoElement.duration * 1000);
                 videoElement.play();
             }
         } else {
             setVideoDuration(5000);
-            setProgressBarDuration(5000);
         }
 
         videoRefs.current.forEach((videoElement, index) => {
@@ -67,27 +61,6 @@ const SlideShowMobile = () => {
             }
         });
     }, [activeSlideIndex]);
-
-    useEffect(() => {
-        const progressBar = progressBarRef.current;
-        if (progressBar) {
-            progressBar.style.transition = `width ${progressBarDuration}ms linear`;
-            setProgressBarWidth("100%");
-        }
-
-        const resetProgressBar = () => {
-            if (progressBar) {
-                progressBar.style.transition = "none";
-                setProgressBarWidth("0%");
-                setTimeout(() => {
-                    progressBar.style.transition = `width ${progressBarDuration}ms linear`;
-                    setProgressBarWidth("100%");
-                }, 50);
-            }
-        };
-
-        resetProgressBar();
-    }, [activeSlideIndex, progressBarDuration]);
 
     const updateSlide = (index) => {
         setTransitionValue("duration-300");
@@ -204,11 +177,7 @@ const SlideShowMobile = () => {
                 </div>
                 <div className="flex w-full h-2vw mt-1/5vw">
                     <div className="loading-progress absolute top-0 right-0 flex w-full h-0/5vw z-10">
-                        <div
-                            ref={progressBarRef}
-                            className="loading-bar h-full bg-secondary ms-auto"
-                            style={{ width: progressBarWidth }}
-                        ></div>
+                        <div className="loading-bar h-full bg-secondary ms-auto"></div>
                     </div>
                     <div className="flex mx-auto gap-x-2/5vw">
                         <Button typeBtn="button" styleBtn="absolute top-0 left-0 flex justify-center items-center w-10vw h-3/4 overflow-hidden duration-300" onclick={throttledPrevClick}>

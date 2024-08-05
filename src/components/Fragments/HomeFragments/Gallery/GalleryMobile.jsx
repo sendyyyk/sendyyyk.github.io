@@ -41,6 +41,9 @@ const GalleryMobile = (props) => {
         setDisablePrev(translateX >= minTranslateX);
         setDisableNext(translateX <= maxTranslateX);
         setCurrentIndex(Math.abs(translateX / 40) + 2);
+        if (additionalGallery.length < 2) {
+            setCurrentIndex(Math.abs(translateX / 40) + 1);
+        }
     }, [translateX, minTranslateX, maxTranslateX]);
 
     const transformStyle = { transform: `translateX(${translateX}vw)` };
@@ -63,7 +66,7 @@ const GalleryMobile = (props) => {
                     <div className="flex flex-col h-full w-full mb-auto gap-y-2vw overflow-hidden">
                         <ul className="flex h-full duration-300" style={{ width: originalWidth, ...transformStyle }}>
                             {filteredGalleryItems.length === 0 && (
-                                <NotFoundGallery 
+                                <NotFoundGallery
                                     styleVideo="w-40vw h-40vw rounded-3vw mx-auto"
                                     text="text-2vw"
                                     widthIcon="7vw"
@@ -78,7 +81,7 @@ const GalleryMobile = (props) => {
                                     date={galleryItem.date}
                                     popular={galleryItem.popular}
                                     randomName={galleryItem.randomName}
-                                    styleGalery="w-40vw h-40vw"
+                                    styleGalery="!w-40vw !h-40vw"
                                     styleDiv1Li="rounded-3vw !w-90% !h-90%"
                                     styleFire="w-5vw h-5vw"
                                     styleCopy="w-5vw h-5vw rounded-1vw"
@@ -88,8 +91,8 @@ const GalleryMobile = (props) => {
                         </ul>
                         <ul className="flex h-full duration-300" style={{ width: additionalWidth, ...transformStyle }}>
                             {filteredGalleryItems.length === 0 && (
-                                <NotFoundGallery 
-                                    rotate="180" 
+                                <NotFoundGallery
+                                    rotate="180"
                                     styleVideo="w-40vw h-40vw rounded-3vw mx-auto"
                                     text="text-2vw"
                                     widthIcon="7vw"
@@ -105,7 +108,7 @@ const GalleryMobile = (props) => {
                                     popular={galleryItem.popular}
                                     randomName={galleryItem.randomName}
                                     rotate="180"
-                                    styleGalery="w-40vw h-40vw"
+                                    styleGalery="!w-40vw !h-40vw"
                                     styleDiv1Li="rounded-3vw !w-90% !h-90%"
                                     styleFire="w-5vw h-5vw"
                                     styleCopy="w-5vw h-5vw rounded-1vw"

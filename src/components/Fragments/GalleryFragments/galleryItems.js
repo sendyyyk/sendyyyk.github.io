@@ -32,7 +32,7 @@ const galleryItems = [
     "src": [
       "gallery-5.png"
     ],
-    "caption": "cece amdoawm daw mdaw modawm odmawod mawodmawm dawmd okawmdokawmodka wmodkmaw omawo mawom dawm dawom dawok",
+    "caption": "",
     "date": "22 July 2024",
     "popular": true,
     "randomName": "vLKVASVzg3"

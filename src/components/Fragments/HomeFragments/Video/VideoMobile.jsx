@@ -58,7 +58,7 @@ const VideoMobile = (props) => {
                                 popular={videosItem.popular}
                                 randomName={videosItem.randomName}
                                 styleVid={dynamicStyleVid}
-                                styleVideo="h-52vw rounded-3vw mx-2vw one-video"
+                                styleVideo="h-52vw rounded-3vw mx-2vw one-video !w-full"
                                 styleParentDuration="rounded-2vw"
                                 styleDuration="text-3vw px-3vw py-1/5vw"
                                 styleVideoTitle="text-3vw px-2vw py-1/5vw"

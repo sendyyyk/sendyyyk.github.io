@@ -10,6 +10,7 @@ const Gallery = (props) => {
     const [translateX, setTranslateX] = useState(0);
     const [disablePrev, setDisablePrev] = useState(true);
     const [disableNext, setDisableNext] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(5);
 
     const additionalGallery = galleryItems.filter(item => item.popular).map(gallery => ({
         ...gallery,
@@ -39,6 +40,10 @@ const Gallery = (props) => {
     useEffect(() => {
         setDisablePrev(translateX >= minTranslateX);
         setDisableNext(translateX <= maxTranslateX);
+        setCurrentIndex(Math.abs(translateX / 13) + 5);
+        if (additionalGallery.length < 5) {
+            setCurrentIndex(Math.abs(translateX / 13) + additionalGallery.length);
+        }
     }, [translateX, minTranslateX, maxTranslateX]);
 
     const transformStyle = { transform: `translateX(${translateX}vw)` };
@@ -50,6 +55,9 @@ const Gallery = (props) => {
             <div className="relative flex flex-col w-full">
                 <div className=" flex w-full h-7vw mb-2vw backdrop-blur-0/2vw">
                     <span className="mx-auto payfair-font text-black text-5vw leading-0 xdrk-c1-css">Gallery</span>
+                </div>
+                <div className='absolute right-0 mt-5vw flex justify-center items-center w-5vw h-2/5vw ms-auto mb-4vw rounded-full bg-grey xdrk-bc3-css font-semibold text-1vw text-white xdrk-c2-css'>
+                    {currentIndex}/{additionalGallery.length}
                 </div>
                 <div className="relative flex w-full h-20vw px-5vw">
                     <Button styleBtn="absolute top-5vw left-0 flex w-3vw h-3vw rounded-full bg-primary duration-300 shadow-0/4vwBlack cursor-pointer hover:opacity-80" onclick={handlePrevClick} disabled={disablePrev}>

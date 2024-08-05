@@ -280,7 +280,6 @@ const DisplayGallery = (props) => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             ) : (

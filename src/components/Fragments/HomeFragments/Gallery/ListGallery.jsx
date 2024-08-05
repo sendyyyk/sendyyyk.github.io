@@ -12,6 +12,22 @@ const ListGallery = (props) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
+        const userAgent = navigator.userAgent.toLowerCase();
+        const mobileDevices = /iphone|ipod|ipad|android|blackberry|bb|playbook|windows phone|symbian|iemobile|mobile|tablet|kindle|silk|opera mini/i;
+        setIsMobile(mobileDevices.test(userAgent));
+
+        const handlePopState = () => {
+            setIsDisplayVisible(false);
+        };
+
+        window.addEventListener('popstate', handlePopState);
+
+        return () => {
+            window.removeEventListener('popstate', handlePopState);
+        };
+    }, []);
+
+    useEffect(() => {
         setContainerDef(document.querySelector('.container-def'));
         if (src.length > 0) {
             const firstImageSrc = src[0];
