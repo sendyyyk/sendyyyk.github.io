@@ -382,7 +382,7 @@ const DisplayVideos = (props) => {
                 </Container>
             ) : (
                 <Container styleScroll="h-full" hidden="true">
-                    <div className='fixed top-0 left-0 bottom-0 right-0 w-full h-full overflow-y-auto'>
+                    <div className='absolute top-0 left-0 bottom-0 right-0 w-full h-full overflow-y-auto'>
                         <div className='flex justify-end w-full bg-black'>
                             <Header></Header>
                         </div>
