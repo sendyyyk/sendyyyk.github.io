@@ -628,7 +628,7 @@ body[data-theme="dark"][data-device="mobile-phn"] div:where(.swal2-container) di
 
 .vjs-primary .video-js .vjs-control-bar .vjs-progress-control .vjs-progress-holder .vjs-play-progress::before {
     font-size: 0.7vw;
-    line-height: 0.35vw;
+    line-height: 35%;
     right: -0.5vw;
     transition: 0.3s;
     color: var(--secondary-color);

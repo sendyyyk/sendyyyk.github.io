@@ -26,7 +26,7 @@ const Introduction = (props) => {
                                 My name is Sendy Kurniawan, and I'm a programmer, photographer, and drummer – I also enjoy creating graphic designs such as posters, banners, and more! The image above is one of the designs I created myself. I think the image is still not very good to look at, hehe, sorry.
                             </span>
                             <div className="relative w-full mt-10vw">
-                                <AboutVideo src1="about-video.mp4" src2="about-video.mp4"/>
+                                <AboutVideo src1="" src2=""/>
                             </div>
                         </div>
                         <div className="flex flex-col w-36vw">
