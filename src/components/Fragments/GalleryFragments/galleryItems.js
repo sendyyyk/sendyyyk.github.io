@@ -32,7 +32,7 @@ const galleryItems = [
     "src": [
       "gallery-4.png"
     ],
-    "caption": "semuanya",
+    "caption": "Obito Uchiha",
     "date": "22 July 2024",
     "popular": true,
     "randomName": "SJdGpl2QYB"
@@ -41,7 +41,7 @@ const galleryItems = [
     "src": [
       "gallery-5.png"
     ],
-    "caption": "",
+    "caption": "Shino Aburame",
     "date": "22 July 2024",
     "popular": true,
     "randomName": "vLKVASVzg3"
@@ -50,7 +50,7 @@ const galleryItems = [
     "src": [
       "gallery-3.png"
     ],
-    "caption": "cececexx",
+    "caption": "Sasuke Uchiha",
     "date": "22 July 2024",
     "popular": true,
     "randomName": "umJZkO64A5"
@@ -59,7 +59,7 @@ const galleryItems = [
     "src": [
       "gallery-6.png"
     ],
-    "caption": "vavawavwa",
+    "caption": "Jirōbō, Tayuya, Kidōmaru, Sakon",
     "date": "22 July 2024",
     "popular": true,
     "randomName": "pG3hWwg873"
@@ -68,7 +68,7 @@ const galleryItems = [
     "src": [
       "gallery-7.png"
     ],
-    "caption": "awvawvaavawv",
+    "caption": "Konan, Nagato, Yahiko",
     "date": "22 July 2024",
     "popular": true,
     "randomName": "BDnKSNHjAA"

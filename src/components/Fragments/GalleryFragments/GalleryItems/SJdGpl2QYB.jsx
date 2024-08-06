@@ -17,7 +17,7 @@ import Close from '../../../Elements/Icon/Close';
 import Swal from 'sweetalert2';
 
 const DisplayGallery = (props) => {
-    const {componentName = "SJdGpl2QYB", src = ["gallery-4.png"], caption = "semuanya", date = "22 July 2024"} = props;
+    const {componentName = "SJdGpl2QYB", src = ["gallery-4.png"], caption = "Obito Uchiha", date = "22 July 2024"} = props;
     const [isOpen, setIsOpen] = useState(false);
     const [isFullscreen, setIsFullscreen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);

@@ -30,7 +30,7 @@ const videosItems = [
       "Wind_2.mp4"
     ],
     "videoTitle": "Wind",
-    "description": "Lupa",
+    "description": "Wind Akeboshi",
     "poster": [
       "wind-akeboshi.png"
     ],
@@ -43,7 +43,7 @@ const videosItems = [
       "lost-saga.mp4"
     ],
     "videoTitle": "Lost Saga Wild West",
-    "description": "GK tau Gabut doang",
+    "description": "Backsound Map Wild West Lost Saga",
     "poster": [
       "lost-saga.png"
     ],
