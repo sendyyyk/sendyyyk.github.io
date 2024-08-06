@@ -26,10 +26,17 @@ const Profile = () => {
             <Helmet>
                 <title>Gallery</title>
             </Helmet>
-            <Container styleScroll="h-full">
-                <Header></Header>
-                <Main></Main>
-            </Container>
+            {!isMobile ? (
+                <Container styleScroll="h-full">
+                    <Header></Header>
+                    <Main></Main>
+                </Container>
+            ) : (
+                <Container styleScroll="h-full" hidden={true}>
+                    <Header></Header>
+                    <Main></Main>
+                </Container>
+            )}
         </Fragment>
     )
 }

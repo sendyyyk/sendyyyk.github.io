@@ -1,6 +1,15 @@
 const galleryItems = [
   {
     "src": [
+      "gallery-11.png"
+    ],
+    "caption": "My Room",
+    "date": "16 November 2019",
+    "popular": false,
+    "randomName": "npr7m7o2Hj"
+  },
+  {
+    "src": [
       "gallery-1.png",
       "gallery-8.png",
       "gallery-9.png"

@@ -44,6 +44,7 @@ try {
 // Template untuk komponen item galeri baru
 const componentTemplate = (componentName, src, videoTitle, description, poster, date) =>
 `import React, { Fragment, useState, useEffect, useRef } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import VideoJSprimary from '../../VideoJS/VideoPrimary/Video';
@@ -233,6 +234,13 @@ const DisplayVideos = (props) => {
         setIsMobile(mobileDevices.test(userAgent));
     }, []);
 
+    const handlers = useSwipeable({
+        onSwipedLeft: () => handlePrevClick(),
+        onSwipedRight: () => handleNextClick(),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
     useEffect(() => {
         if (isMobile) {
             document.body.setAttribute('data-device', 'mobile-phn');
@@ -269,7 +277,7 @@ const DisplayVideos = (props) => {
                                         </>
                                     )}
                                     <div className='h-full w-full overflow-x-hidden' style={isOpen ? { width: '85vw', marginLeft: 'auto', marginRight: 'auto' } : {}}  >
-                                        <ul className= "flex h-full duration-300 bg-white xdrk-bc2-css" style={{ width: \`calc(100% * \${src.length})\`, transform: \`translateX(\${translateX}%)\` }}>
+                                        <ul {...handlers} className= "flex h-full duration-300 bg-white xdrk-bc2-css" style={{ width: \`calc(100% * \${src.length})\`, transform: \`translateX(\${translateX}%)\` }}>
                                             {src.map((video, index) => (
                                                 <li key={index} className="relative h-full w-full">
                                                     {playingIndex === index ? (
@@ -407,7 +415,7 @@ const DisplayVideos = (props) => {
                                         </>
                                     )}
                                     <div className='h-full w-full overflow-x-hidden'>
-                                        <ul className='flex h-full duration-300' style={{ width: \`calc(100% * \${src.length})\`, transform: \`translateX(\${translateX}%)\` }}>
+                                        <ul  className='flex h-full duration-300' style={{ width: \`calc(100% * \${src.length})\`, transform: \`translateX(\${translateX}%)\` }}>
                                             {src.map((video, index) => (
                                                 <li key={index} className="relative h-full w-full">
                                                     {playingIndex === index ? (

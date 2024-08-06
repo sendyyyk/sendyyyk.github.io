@@ -44,6 +44,7 @@ try {
 // Template untuk komponen item galeri baru
 const componentTemplate = (componentName, src, caption, date) =>
     `import React, { Fragment, useState, useEffect, useRef } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import Container from "../../../Layouts/Container/Container";
@@ -218,6 +219,13 @@ const DisplayGallery = (props) => {
         setIsMobile(mobileDevices.test(userAgent));
     }, []);
 
+    const handlers = useSwipeable({
+        onSwipedLeft: () => handlePrevClick(),
+        onSwipedRight: () => handleNextClick(),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
     useEffect(() => {
         if (isMobile) {
             document.body.setAttribute('data-device', 'mobile-phn');
@@ -373,7 +381,7 @@ const DisplayGallery = (props) => {
                                                 </>
                                             )}
                                             <div className='h-full w-full overflow-x-hidden'>
-                                                <ul className= {isFullscreen ? "flex h-full duration-300 bg-white xdrk-bc2-css" : "flex h-full duration-300 bg-white xdrk-bc2-css"} style={{ width: \`calc(100% * \${src.length})\`, transform: \`translateX(\${translateX}%)\` }}>
+                                                <ul {...handlers} className= {isFullscreen ? "flex h-full duration-300 bg-white xdrk-bc2-css" : "flex h-full duration-300 bg-white xdrk-bc2-css"} style={{ width: \`calc(100% * \${src.length})\`, transform: \`translateX(\${translateX}%)\` }}>
                                                     {src.map((image, index) => (
                                                         <li key={index} className="flex h-full w-full">
                                                             <img 
